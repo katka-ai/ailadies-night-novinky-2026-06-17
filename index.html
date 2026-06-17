@@ -2032,6 +2032,42 @@
       .seesaw { gap: 24px; }
       .weight { width: min(60vw, 240px); }
     }
+
+    /* ── KONTRASTNÍ KARTY (slide „zní sebejistě") ── */
+    .cards-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 2.6vh; }
+    .info-card { padding: 18px 22px; border-radius: var(--r-md); text-align: left; }
+    .info-card .ic-label { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+    .info-card p { font-size: clamp(.95rem, 1.5vw, 1.18rem); line-height: 1.45; }
+    .info-card--hi { border: 1px solid var(--gold); background: rgba(201,168,76,.1); }
+    .slide--on-blush .info-card--hi { background: rgba(201,168,76,.14); }
+    .info-card--hi .ic-label { color: #7A5A1E; }
+
+    /* ── CV / PRÁCE — dokumentová ukázka ── */
+    .cv-doc { background: #fff; border-radius: 14px; padding: 18px 20px; box-shadow: 0 14px 36px rgba(80,40,70,.16); color: #2a2622; }
+    .cv-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .cv-avatar { width: 40px; height: 40px; border-radius: 50%; flex: none; background: linear-gradient(135deg, var(--rose), #c98a4c); }
+    .cv-headlines { flex: 1; }
+    .cv-headlines b { display: block; font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.1; }
+    .cv-headlines span { font-size: .76rem; color: var(--muted); }
+    .cv-match { font-size: .66rem; font-weight: 700; color: #2f7a4a; background: rgba(47,122,74,.12); padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
+    .cv-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; }
+    .cv-chip { font-size: .72rem; background: var(--gold-dim); color: #7A5A1E; border: 1px solid var(--gold-border); padding: 4px 10px; border-radius: 999px; }
+    .cv-lines { display: flex; flex-direction: column; gap: 6px; }
+    .cv-lines span { height: 6px; border-radius: 3px; background: rgba(42,38,34,.12); }
+    .cv-lines span:nth-child(2) { width: 88%; }
+    .cv-lines span:nth-child(3) { width: 70%; }
+    .cv-job { margin-top: 12px; background: #faf7f2; border: 1px dashed var(--gold-border); border-radius: 12px; padding: 11px 14px; font-size: .82rem; color: #2a2622; }
+    .cv-job b { color: #7A5A1E; }
+
+    /* ── DAILY BRIEF — ranní přehled ── */
+    .brief-card { background: linear-gradient(160deg, #1f1b18, #2a1c24); border: 1px solid var(--gold-border); border-radius: 20px; padding: 18px 22px; box-shadow: 0 18px 44px rgba(0,0,0,.3); color: var(--cream); max-width: 430px; margin: 0 auto; }
+    .brief-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .brief-head b { font-family: var(--font-serif); font-size: 1.3rem; }
+    .brief-moon { font-size: .68rem; color: var(--gold-light); border: 1px solid var(--gold-border); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+    .brief-item { display: flex; gap: 12px; align-items: flex-start; padding: 11px 0; border-top: 1px solid rgba(201,168,76,.18); }
+    .brief-item .bi-ico { color: var(--gold); font-size: 1.1rem; line-height: 1.3; }
+    .brief-item .bi-txt { font-size: .92rem; line-height: 1.35; color: var(--on-dark-85); }
+    .brief-item .bi-txt b { color: var(--cream); }
   </style>
 </head>
 <body>
@@ -2048,7 +2084,7 @@
       <div class="cinematic anim anim-1" style="max-width:1000px;text-align:center">
         <p class="eyebrow" style="justify-content:center"><span class="spark">✦</span> Novinky a živé ukázky AI · 18:30</p>
         <h1 class="anim anim-2">Co se právě teď <span class="text-gold">děje v AI</span></h1>
-        <p class="lead anim anim-3" style="margin-top:2vh">10 novinek z jara 2026.</p>
+        <p class="lead anim anim-3" style="margin-top:2vh">Novinky z jara 2026 — a 3 nejžhavější.</p>
         <div class="tags anim anim-4" style="justify-content:center">
           <span class="tag tag--gold">Katka &amp; Péťa</span>
           <span class="tag">Pro začátečnice i pokročilé</span>
@@ -2057,34 +2093,31 @@
     </div>
   </section>
 
-  <!-- 2 · CO VÁS ČEKÁ -->
-  <section class="slide slide--on-blush" data-title="Co vás čeká">
+  <!-- 2 · TIP 1 — ZNÍ SEBEJISTĚ (pro pokročilé) -->
+  <section class="slide slide--on-blush" data-title="Tip 1 · Jistota AI">
     <div class="slide-bg slide-bg--brand-light"></div>
     <div class="brand-spotlight" aria-hidden="true"></div>
     <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
     <div class="slide-inner slide-inner--center">
-      <div class="about-block">
-        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Jak to bude</p>
-        <h2 class="anim anim-2">Deset novinek, <span class="text-gold">tři HOT</span></h2>
-        <p class="lead anim anim-3">Žádná technika — jen to, co můžete použít hned. Od přístupných věcí pro každou až po to, kam celá AI míří.</p>
-        <div class="pillars-row pillars-row--center anim anim-4">
-          <div class="pillar glass">
-            <div class="num">10</div>
-            <h3>novinek</h3>
-            <p>Co je nového a k čemu to je</p>
+      <div class="content-wide" style="max-width:1100px">
+        <p class="eyebrow anim anim-1" style="justify-content:center"><span class="spark">✦</span> Tip 1 · i pro pokročilé</p>
+        <h2 class="anim anim-2" style="text-align:center">Proč AI zní sebejistě, <span class="text-gold">i když se plete</span></h2>
+        <p class="lead anim anim-3" style="text-align:center;max-width:900px;margin:1.5vh auto 0">Model nehledá pravdu — odhaduje nejpravděpodobnější další slovo. Sebejistý tón proto nic neříká o tom, jestli má pravdu.</p>
+        <div class="cards-2 anim anim-4">
+          <div class="info-card glass">
+            <div class="ic-label">Co se obvykle ví</div>
+            <p>Občas si „vymyslí" a řekne to úplně stejně přesvědčivě jako fakt.</p>
           </div>
-          <div class="pillar glass">
-            <div class="num">3</div>
-            <h3>HOT tipy</h3>
-            <p>Co si zapamatovat především</p>
-          </div>
-          <div class="pillar glass">
-            <div class="num">0</div>
-            <h3>nuda</h3>
-            <p>Praktické tipy a živé ukázky</p>
+          <div class="info-card info-card--hi">
+            <div class="ic-label">Co se možná neví</div>
+            <p>Nejnovější modely (Claude Opus 4.8, GPT-5.5) se cíleně učí říct <b>„tímhle si nejsem jistá"</b> — upřímnost o nejistotě se měří jako kvalita, ne bere jako slabina.</p>
           </div>
         </div>
+        <div class="glass anim anim-4" style="margin:2.4vh auto 0;max-width:900px;padding:18px 26px;border-radius:14px;text-align:center">
+          <p style="font-size:clamp(1rem,1.6vw,1.3rem);line-height:1.5"><span class="rose">💬</span> Tip pro pokročilé: požádej ji, ať <b>ohodnotí, jak jistá si je</b>, doloží zdroj, nebo ať <b>argumentuje sama proti sobě</b>. Z hádače slov uděláš parťáka, co ti řekne i „tady bych si to ověřila".</p>
+        </div>
+        <p class="sub anim anim-4" style="margin-top:1.6vh;text-align:center;color:var(--muted)">Zdroj: výzkum k „calibrated uncertainty" · poznámky k modelům Opus 4.8 / GPT-5.5 · 2026</p>
       </div>
     </div>
   </section>
@@ -2097,7 +2130,7 @@
     <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
     <div class="slide-inner slide-inner--center">
       <div class="content-narrow">
-        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 1 / 10 · pro začátečnice</p>
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 2 · pro začátečnice</p>
         <h2 class="anim anim-2">ChatGPT si vás <span class="text-gold">pamatuje sám</span></h2>
         <p class="lead anim anim-3">Od června už nemusíte říkat „zapamatuj si…". ChatGPT sám zachytí kontext z rozhovorů a drží si ho dál. Řeknete jednou „jsem HR manažerka v e-commerce, odpovídej stručně česky" — a platí to napořád. Máte i stránku, kde vidíte, co o vás ví, a můžete to mazat.</p>
         <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
@@ -2116,7 +2149,7 @@
     <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
     <div class="slide-inner slide-inner--center">
       <div class="content-narrow">
-        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 2 / 10 · pro všechny</p>
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 3 · pro všechny</p>
         <h2 class="anim anim-2">Excel a Sheets, co <span class="text-gold">poslouchají řeč</span></h2>
         <p class="lead anim anim-3">Gemini v Google Sheets postaví celou formátovanou tabulku včetně grafů z jednoho požadavku. ChatGPT přibyl přímo do bočního panelu Excelu i Sheets — pomůže s rozpočty, vzorci a čištěním dat na místě.</p>
         <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
@@ -2135,13 +2168,52 @@
     <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
     <div class="slide-inner slide-inner--center">
       <div class="content-narrow">
-        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 3 / 10 · pro všechny</p>
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 4 · pro všechny</p>
         <h2 class="anim anim-2">Generování obrázků <span class="text-gold">konečně umí text</span></h2>
         <p class="lead anim anim-3">ChatGPT Images 2.0 zvládne až 8 obrázků z jednoho zadání, 2K rozlišení a hlavně čitelný text v obrázku. Google Nano Banana 2 jde až do 4K. Konečně vyrobíte vizuál s nápisem „LETNÍ SLEVA 50 %", co opravdu sedí.</p>
         <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
           <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „Reklamní vizuál s čitelným nápisem na první dobrou — tohle dřív nešlo." <span style="color:var(--muted)">(ukázat naživo)</span></p>
         </div>
         <p class="sub anim anim-4" style="margin-top:2vh;color:var(--muted)">Zdroj: OpenAI · Google · duben 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIP 5 — PRÁCE A CV -->
+  <section class="slide slide--on-blush" data-title="Tip 5 · Práce a CV">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="canva-grid">
+        <div class="canva-copy anim anim-1">
+          <p class="eyebrow"><span class="spark">✦</span> Tip 5 · pro všechny</p>
+          <h2>Pomůže ti najít práci a <span class="text-gold">vyladit životopis</span></h2>
+          <p class="lead">Vložíš svůj životopis a inzerát, na který míříš. ChatGPT ti CV přepíše na míru té pozici — doplní slova, která hledá náborový systém i člověk, a vytáhne tvoje silné stránky dopředu.</p>
+          <div class="canva-bullets">
+            <div class="canva-bullet glass"><b>📄 CV na míru inzerátu:</b> ne jeden životopis na všechno, ale verze pro konkrétní místo.</div>
+            <div class="canva-bullet glass"><b>🎤 Příprava na pohovor:</b> nacvičí s tebou otázky i odpovědi nanečisto.</div>
+            <div class="canva-bullet glass"><b>🚩 Přečte inzerát za tebe:</b> upozorní na nejasnosti i na to, na co se zeptat.</div>
+          </div>
+        </div>
+        <div class="canva-stage anim anim-2">
+          <div class="canva-prompt"><span class="rose">💬</span> „Uprav mi tenhle životopis na tuhle pozici."</div>
+          <div class="cv-doc">
+            <div class="cv-head">
+              <div class="cv-avatar"></div>
+              <div class="cv-headlines"><b>Jana Nováková</b><span>Marketing manažerka</span></div>
+              <div class="cv-match">shoda 92 %</div>
+            </div>
+            <div class="cv-chips">
+              <span class="cv-chip">B2B kampaně</span>
+              <span class="cv-chip">rozpočet 2M+</span>
+              <span class="cv-chip">vedení týmu</span>
+            </div>
+            <div class="cv-lines"><span></span><span></span><span></span></div>
+            <div class="cv-job"><b>Inzerát:</b> Marketing Manager · hledají zkušenost s B2B a vedením týmu — <b>doplněno do CV ✓</b></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2217,6 +2289,37 @@
     <p class="sub anim anim-4" style="position:absolute;bottom:3.2vh;left:0;right:0;text-align:center;z-index:5;color:var(--muted)">Marketing pro e-commerce bez DTP grafika — vše běží konverzačně a v jednom kroku. · Zdroj: Canva, 16. 4. 2026</p>
   </section>
 
+  <!-- TIP 6 — GEMINI SPARK / DAILY BRIEF -->
+  <section class="slide slide--on-blush" data-title="Tip 6 · Daily Brief">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="canva-grid">
+        <div class="canva-copy anim anim-1">
+          <p class="eyebrow"><span class="spark">✦</span> Tip 6 · pro všechny</p>
+          <h2>AI, která pracuje, <span class="text-gold">i když zrovna nesedíš u počítače</span></h2>
+          <p class="lead">Zadáš jednou, co tě zajímá, a běží to na pozadí. Ráno máš v mailu hotový přehled dne — co je důležité, co hoří a co můžeš rovnou odškrtnout. Nemusíš se ptát pořád dokola.</p>
+          <div class="canva-bullets">
+            <div class="canva-bullet glass"><b>🔁 Běží samo:</b> projde přes noc maily a kalendář, ty se ráno jen podíváš.</div>
+            <div class="canva-bullet glass"><b>☀️ Ranní přehled:</b> priority a termíny pohromadě, ne roztroušené v deseti appkách.</div>
+          </div>
+        </div>
+        <div class="canva-stage anim anim-2">
+          <div class="canva-prompt"><span class="rose">💬</span> „Sleduj mi maily a kalendář a každé ráno pošli přehled dne."</div>
+          <div class="brief-card">
+            <div class="brief-head"><b>Dobré ráno ☀️</b><span class="brief-moon">🌙 hotovo přes noc</span></div>
+            <div class="brief-item"><span class="bi-ico">📌</span><span class="bi-txt"><b>Priorita dne:</b> dokončit nabídku pro klienta — termín dnes 15:00.</span></div>
+            <div class="brief-item"><span class="bi-ico">📅</span><span class="bi-txt"><b>2 schůzky:</b> 10:00 tým, 13:30 dodavatel kávy.</span></div>
+            <div class="brief-item"><span class="bi-ico">✅</span><span class="bi-txt"><b>Návrh:</b> 3 maily čekají na odpověď — připravila jsem koncepty.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="sub anim anim-4" style="position:absolute;bottom:3.2vh;left:0;right:0;text-align:center;z-index:5;color:var(--muted)">Gemini „Spark" / Daily Brief · osobní asistent běžící 24/7 · 2026</p>
+  </section>
+
   <!-- 8 · TIP 6 — AI LICHOTÍ (HOT) -->
   <section class="slide" data-title="HOT · AI lichotí">
     <div class="slide-bg slide-bg--brand-dark"></div>
@@ -2247,7 +2350,7 @@
     <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
     <div class="slide-inner slide-inner--center">
       <div class="content-narrow">
-        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 7 / 10 · pro všechny</p>
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 7 · pro všechny</p>
         <h2 class="anim anim-2">Nedůvěřujte slepě tomu, co AI <span class="text-gold">„najde"</span></h2>
         <p class="lead anim anim-3">Výzkumníci z Cornell ukázali, že stačí vložit <strong>13 slov</strong> do běžného komentáře na webu a AI vyhledávač pak v desítkách procent případů doporučí vymyšlený produkt nebo podvod. AI věří tomu, co najde na internetu — a to se dá zneužít.</p>
         <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
@@ -2287,7 +2390,7 @@
     <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
     <div class="slide-inner slide-inner--center">
       <div class="content-narrow">
-        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 9 / 10 · kam to směřuje</p>
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 8 · kam to směřuje</p>
         <h2 class="anim anim-2">AI brzy <span class="text-gold">nakoupí za vás</span></h2>
         <p class="lead anim anim-3">Visa, Mastercard, PayPal i Google už pilotují svět, kde za vás nakoupí a vyřídí věci AI agent — Google umí koupit z Etsy nebo Wayfair přímo v chatu. Nová otázka: když za vás agent zaplatí, jak prodejce pozná, že je to fakt <strong>váš</strong> agent, a ne podvodník?</p>
         <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
@@ -2306,7 +2409,7 @@
     <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
     <div class="slide-inner slide-inner--center">
       <div class="balance">
-        <p class="eyebrow anim anim-1" style="justify-content:center"><span class="spark">✦</span> Tip 10 / 10 · proč tu dnes jsme</p>
+        <p class="eyebrow anim anim-1" style="justify-content:center"><span class="spark">✦</span> Tip 9 · proč tu dnes jsme</p>
         <p class="balance-quote anim anim-2">„Ženy tvoří 47 % pracovní síly, ale nesou nepoměrné riziko. <span class="text-gold">AI je hrozba jen pro ty, kdo ji ignorují.</span>"</p>
         <div class="seesaw anim anim-3">
           <div class="seesaw-beam" aria-hidden="true"></div>
