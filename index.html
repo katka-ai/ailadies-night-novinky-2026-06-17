@@ -2084,6 +2084,13 @@
     .eu-note .eu-ico { font-size: 1.9rem; line-height: 1; flex: none; }
     .eu-note p { font-size: clamp(.92rem, 1.45vw, 1.16rem); line-height: 1.45; }
     .eu-note p b { color: #7A5A1E; }
+
+    /* ── NARATIVNÍ KARTY (AI agenti — Rohlík příběh) ── */
+    .agent-card { flex: 1 1 0; max-width: 360px; padding: 20px 24px; border-radius: var(--r-md); text-align: left; }
+    .agent-step { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light); font-weight: 700; margin-bottom: 8px; }
+    .agent-h { font-family: var(--font-serif); font-size: clamp(1.12rem, 1.7vw, 1.45rem); color: var(--cream); margin-bottom: 8px; line-height: 1.1; }
+    .agent-p { font-size: clamp(.84rem, 1.2vw, 1rem); line-height: 1.42; color: var(--on-dark-85); }
+    .agent-p b { color: var(--gold-light); }
   </style>
 </head>
 <body>
@@ -2304,12 +2311,25 @@
       <div class="content-wide" style="max-width:1150px">
         <p class="eyebrow anim anim-1" style="justify-content:center;color:var(--rose)"><span class="spark" style="color:var(--rose)">🔥</span> HOT tip 1 ze 3</p>
         <h2 class="anim anim-2" style="text-align:center">AI agenti: od chatu k <span class="text-gold">„udělej to za mě"</span></h2>
-        <p class="lead anim anim-3" style="text-align:center;max-width:900px;margin:2vh auto 0">ChatGPT poradí. <strong>Agent</strong> má prohlížeč i přístup k vašim aplikacím a úkol vyřídí za vás — prohledá weby, porovná, sestaví report, připraví podklady. Před nákupem nebo odesláním se vždy zeptá.</p>
-        <div class="stats-row anim anim-4" style="margin-top:3.5vh">
-          <div class="stat-box glass"><div class="mega-stat">57 %</div><div class="mega-label">firem už používá AI agenty</div></div>
-          <div class="stat-box glass"><div class="mega-stat">7 min</div><div class="mega-label">z 5 hodin → analýza hrozeb (eSentire)</div></div>
-          <div class="stat-box glass"><div class="mega-stat">+500 %</div><div class="mega-label">nárůst používání za 6 týdnů (Freshfields)</div></div>
+        <p class="lead anim anim-3" style="text-align:center;max-width:920px;margin:1.6vh auto 0">ChatGPT <strong>poradí</strong>. Agent to <strong>udělá za vás</strong> — má prohlížeč i přístup k aplikacím, prohledá, porovná, sestaví, nakoupí. Před citlivou akcí se vždy zeptá. A nejhmatatelnější příběh roku staví Čech.</p>
+        <div class="stats-row anim anim-4" style="margin-top:2.8vh;align-items:stretch">
+          <div class="agent-card glass">
+            <div class="agent-step">1 · každý den</div>
+            <div class="agent-h">Rohlík &amp; Maia 🛒</div>
+            <p class="agent-p">Napíšeš Maie na WhatsApp jako kamarádce <b>„co dnes na večeři?"</b> — naplánuje jídlo, naplní košík a nákup vyřídí rovnou v chatu. První v Evropě dal <b>platby přímo do AI asistenta</b>.</p>
+          </div>
+          <div class="agent-card glass">
+            <div class="agent-step">2 · jak to funguje</div>
+            <div class="agent-h">MCP = „USB-C pro AI" 🔌</div>
+            <p class="agent-p">Rohlík spustil vlastní oficiální <b>MCP server</b>. Čupr: „všechno teď musí být API/MCP first." Interně prý agent nahradil práci celého týmu a <b>snížil náklady o 99 %</b>.</p>
+          </div>
+          <div class="agent-card glass">
+            <div class="agent-step">3 · kam to jde</div>
+            <div class="agent-h">Agenti + subagenti 🤝</div>
+            <p class="agent-p">Agenti, kteří spolu <b>spolupracují</b> a před citlivou akcí se zeptají na svolení. Tohle není sci-fi z USA — staví se to tady.</p>
+          </div>
         </div>
+        <p class="sub anim anim-4" style="margin-top:2.2vh;text-align:center;color:var(--muted)">💡 Ukázat naživo: Perplexity Comet — agent prohlíží web, klikne a před citlivou akcí počká na souhlas.</p>
       </div>
     </div>
   </section>
