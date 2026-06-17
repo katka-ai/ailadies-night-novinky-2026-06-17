@@ -2068,6 +2068,22 @@
     .brief-item .bi-ico { color: var(--gold); font-size: 1.1rem; line-height: 1.3; }
     .brief-item .bi-txt { font-size: .92rem; line-height: 1.35; color: var(--on-dark-85); }
     .brief-item .bi-txt b { color: var(--cream); }
+
+    /* ── SROVNÁVACÍ TABULKY (Dreaming) ── */
+    .dtable { width: 100%; display: grid; border: 1px solid var(--gold-border); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.62); box-shadow: 0 12px 32px rgba(80,40,70,.12); }
+    .dtable.cols3 { grid-template-columns: 0.85fr 1fr 1.25fr; }
+    .dtable.cmp { grid-template-columns: 0.85fr 1fr 1.5fr; }
+    .dtable > div { padding: 9px 14px; font-size: clamp(.76rem, 1.1vw, .98rem); line-height: 1.32; border-top: 1px solid var(--gold-border); text-align: left; color: #3a322b; }
+    .dtable > .dh { background: rgba(201,168,76,.18); font-weight: 700; border-top: none; color: #5b4a22; }
+    .dtable .d-hi { background: rgba(201,168,76,.08); color: #5b4a22; font-weight: 600; }
+    .dtable .d-name { font-weight: 700; color: #2a2622; }
+    .dtable .d-strong { color: #7A5A1E; font-weight: 600; }
+
+    /* ── EU / GDPR upozornění ── */
+    .eu-note { margin: 2.4vh auto 0; max-width: 1000px; border: 1px solid var(--gold); background: rgba(201,168,76,.12); border-radius: 16px; padding: 18px 24px; display: flex; gap: 16px; align-items: flex-start; text-align: left; }
+    .eu-note .eu-ico { font-size: 1.9rem; line-height: 1; flex: none; }
+    .eu-note p { font-size: clamp(.92rem, 1.45vw, 1.16rem); line-height: 1.45; }
+    .eu-note p b { color: #7A5A1E; }
   </style>
 </head>
 <body>
@@ -2122,21 +2138,81 @@
     </div>
   </section>
 
-  <!-- 3 · TIP 1 — PAMĚŤ -->
-  <section class="slide slide--on-blush" data-title="Tip 1 · Paměť">
+  <!-- 3 · TIP 2 — DREAMING V3 (co to mění) -->
+  <section class="slide slide--on-blush" data-title="Tip 2 · Dreaming">
     <div class="slide-bg slide-bg--brand-light"></div>
     <div class="brand-spotlight" aria-hidden="true"></div>
     <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
     <div class="slide-inner slide-inner--center">
-      <div class="content-narrow">
-        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 2 · pro začátečnice</p>
-        <h2 class="anim anim-2">ChatGPT si vás <span class="text-gold">pamatuje sám</span></h2>
-        <p class="lead anim anim-3">Od června už nemusíte říkat „zapamatuj si…". ChatGPT sám zachytí kontext z rozhovorů a drží si ho dál. Řeknete jednou „jsem HR manažerka v e-commerce, odpovídej stručně česky" — a platí to napořád. Máte i stránku, kde vidíte, co o vás ví, a můžete to mazat.</p>
-        <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
-          <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „Řeknete jí to jednou — a ona si to pamatuje napořád."</p>
+      <div class="canva-grid">
+        <div class="canva-copy anim anim-1">
+          <p class="eyebrow"><span class="spark">✦</span> Tip 2 · pro všechny</p>
+          <h2>ChatGPT teď „sní" a sám si vás <span class="text-gold">poskládá</span></h2>
+          <p class="lead">Stará paměť byla lepicí papírek — pamatovala si jen to, co jste řekli „zapamatuj si". Nová vrstva <b>Dreaming V3</b> (od 4. 6.) čte napříč roky vašich chatů, sama odvodí vzorce (že chcete stručně, že stavíte e-shop) a profil průběžně přepisuje. Do nového chatu vloží jen relevantní část — a vy máte čitelnou stránku, co o vás ví: můžete mazat, opravit i vypnout.</p>
+          <div class="tags" style="margin-top:1.6vh">
+            <span class="tag tag--gold">82,8 % faktické vybavování</span>
+            <span class="tag">5× efektivnější</span>
+          </div>
+          <p class="sub" style="margin-top:1.6vh;color:var(--muted)">Model sám je pořád „bez paměti" — Dreaming je vrstva navíc, ne v mozku modelu. · Zdroj: OpenAI, The Verge · 4. 6. 2026</p>
         </div>
-        <p class="sub anim anim-4" style="margin-top:2vh;color:var(--muted)">Zdroj: OpenAI · od 4. 6. 2026</p>
+        <div class="canva-stage anim anim-2" style="justify-content:center">
+          <div class="dtable cols3">
+            <div class="dh">Aspekt</div>
+            <div class="dh">Stará paměť</div>
+            <div class="dh">Dreaming V3</div>
+            <div class="d-name">Kdo zapisuje</div>
+            <div>vy, ručně</div>
+            <div class="d-hi">proces na pozadí, automaticky</div>
+            <div class="d-name">Co čte</div>
+            <div>aktuální chat</div>
+            <div class="d-hi">napříč roky konverzací</div>
+            <div class="d-name">Co ukládá</div>
+            <div>krátký seznam faktů</div>
+            <div class="d-hi">vyvíjející se profil</div>
+            <div class="d-name">Aktuálnost</div>
+            <div>statická, dokud needitujete</div>
+            <div class="d-hi">průběžně zpřesňovaná</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3b · TIP 2 pokrač. — KONKURENCE A EU/GDPR -->
+  <section class="slide slide--on-blush" data-title="Tip 2 · Konkurence & EU">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-wide" style="max-width:1150px">
+        <p class="eyebrow anim anim-1" style="justify-content:center"><span class="spark">✦</span> Tip 2 · a teď to nejdůležitější</p>
+        <h2 class="anim anim-2" style="text-align:center;margin-bottom:1.6vh">Mají to (skoro) všichni — jen <span class="text-gold">my v EU zatím ne</span></h2>
+        <div class="dtable cmp anim anim-3">
+          <div class="dh">Asistent</div>
+          <div class="dh">Paměť</div>
+          <div class="dh">V čem vyniká</div>
+          <div class="d-name">Anthropic Claude</div>
+          <div>AutoMemory · 3/2026</div>
+          <div class="d-strong">byl první (i na free plánu), zpracovává chaty ~á 24 h</div>
+          <div class="d-name">Google Gemini</div>
+          <div>Personal Context</div>
+          <div class="d-strong">nejvíc propojené — Gmail, Foto, Kalendář, Drive (opt-in)</div>
+          <div class="d-name">OpenAI ChatGPT</div>
+          <div>Dreaming V3 · 4. 6.</div>
+          <div class="d-strong">nejautomatičtější — žádný trigger, čte napříč roky</div>
+          <div class="d-name">xAI Grok</div>
+          <div>Memory + Skills · 5/2026</div>
+          <div class="d-strong">znovupoužitelné přes „skills"</div>
+          <div class="d-name">Microsoft 365 Copilot</div>
+          <div>Memory</div>
+          <div class="d-strong">nejvíc propojené s pracovními aplikacemi</div>
+        </div>
+        <div class="eu-note anim anim-4">
+          <span class="eu-ico">🇪🇺</span>
+          <p>Háček: v EU (a ČR, UK, Švýcarsku) tyhle <b>plně automatické paměti zatím nejsou</b> — ani Dreaming, ani Gemini Personal Context, ani Claude AutoMemory. Profilování na pozadí bez výslovného souhlasu naráží na GDPR. Co u nás funguje, je <b>starší ruční paměť</b>. Neznamená to, že to nepřijde — ukazuje to, kam AI míří, a je fajn to vědět dřív, než to dorazí.</p>
+        </div>
       </div>
     </div>
   </section>
