@@ -1,0 +1,2503 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI novinky — AILadies Night — 17. 6. 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* AILadies brand — firma/brand/ailadies-brand-manual.md + ailadies.cz */
+      --ink: #0A0A0A;
+      --soft-black: #1A1612;
+      --charcoal: #222222;
+      --gold: #C9A84C;
+      --gold-light: #E2C97E;
+      --gold-dim: rgba(201,168,76,0.15);
+      --gold-border: rgba(201,168,76,0.3);
+      --cream: #F5F0E8;
+      --warm-white: #FAF7F2;
+      --muted: #8A8478;
+      --rose: #C9645A;
+      --blush-50: #FEF7F8;
+      --blush-100: #FDECEF;
+      --blush-200: #F9D4DA;
+      --blush-gradient: linear-gradient(160deg, #FEF7F8 0%, #FDECEF 42%, #F9D4DA 100%);
+      --blush-dark-gradient: linear-gradient(145deg, #1A1612 0%, #2a1820 50%, #1A1612 100%);
+      --bg-dark: var(--ink);
+      --text-on-dark: var(--cream);
+      --on-dark-85: rgba(245,240,232,.88);
+      --on-dark-65: rgba(245,240,232,.65);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+      --gold-gradient: linear-gradient(115deg, #7A5A1E 0%, #B8892A 22%, #C9A84C 40%, #E2C97E 55%, #C9A84C 68%, #9A7428 84%, #7A5A1E 100%);
+      --r-sm: 4px;
+      --r-md: 14px;
+      --ctrl-h: 68px;
+      --logo-top: 4vh;
+      --logo-clearance: clamp(10.5vh, 12.5vh, 14.5vh);
+      --logo-clearance-xl: clamp(12vh, 14vh, 16vh);
+      --logo-clearance-compact: clamp(9vh, 10.5vh, 11.5vh);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: var(--font-sans);
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── DECK ── */
+    .deck {
+      position: fixed;
+      inset: 0 0 var(--ctrl-h) 0;
+      height: calc(100dvh - var(--ctrl-h));
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.03);
+      transition: opacity .6s ease, transform .6s ease, visibility .6s;
+      overflow: hidden;
+      color: var(--text-on-dark);
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    .slide.prev {
+      opacity: 0;
+      transform: scale(.97);
+      z-index: 1;
+    }
+
+    /* ── FULL-BLEED BACKGROUND ── */
+    .slide-bg {
+      position: absolute;
+      inset: -4%;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .slide.active .slide-bg.ken-burns {
+      animation: kenBurns 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes kenBurns {
+      from { transform: scale(1) translate(0, 0); }
+      to   { transform: scale(1.1) translate(-1.5%, -1%); }
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .overlay-left {
+      background: linear-gradient(105deg,
+        rgba(10,10,10,.93) 0%,
+        rgba(10,10,10,.78) 42%,
+        rgba(10,10,10,.35) 68%,
+        rgba(10,10,10,.15) 100%);
+    }
+
+    .overlay-bottom {
+      background: linear-gradient(to top,
+        rgba(10,10,10,.95) 0%,
+        rgba(10,10,10,.72) 38%,
+        rgba(10,10,10,.2) 72%,
+        transparent 100%);
+    }
+
+    .overlay-center {
+      background: radial-gradient(ellipse 90% 80% at 50% 50%,
+        rgba(10,10,10,.82) 0%,
+        rgba(10,10,10,.55) 55%,
+        rgba(10,10,10,.25) 100%);
+    }
+
+    .overlay-split-r {
+      background: linear-gradient(270deg,
+        rgba(10,10,10,.92) 0%,
+        rgba(10,10,10,.7) 38%,
+        transparent 62%);
+    }
+
+    .overlay-gold-wash {
+      background: linear-gradient(135deg,
+        var(--gold-dim) 0%,
+        transparent 50%),
+        linear-gradient(to top, rgba(10,10,10,.88) 0%, rgba(10,10,10,.4) 60%, transparent 100%);
+    }
+
+    .overlay-vignette {
+      background: radial-gradient(ellipse at center, transparent 30%, rgba(10,10,10,.55) 100%);
+    }
+
+    /* ── CONTENT LAYER ── */
+    .slide-inner {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5vh 6vw 4vh;
+    }
+
+    .slide-inner--bottom { justify-content: flex-end; padding-bottom: 6vh; }
+    .slide-inner--top { justify-content: flex-start; }
+    .slide-inner--center { align-items: center; text-align: center; }
+    .slide-inner--spread { justify-content: space-between; }
+
+    /* Šablona: obsah pod rohovým logem AILadies */
+    .slide > .logo + .slide-inner {
+      padding-top: var(--logo-clearance);
+    }
+
+    .slide > .logo.logo--xl + .slide-inner {
+      padding-top: var(--logo-clearance-xl);
+    }
+
+    .slide--welcome-hero > .logo + .slide-inner {
+      padding: 4vh 3vw 5vh 5vw;
+    }
+
+    /* Kompaktní slidy na nižších obrazovkách */
+    .slide-inner--fit {
+      justify-content: flex-start;
+      padding-bottom: 2vh;
+      overflow: hidden;
+    }
+
+    .content-max { width: 100%; max-width: 1400px; }
+    .content-wide { width: 100%; }
+    .content-narrow { max-width: 900px; }
+
+    /* ── LOGO — AILadies (jedno slovo, brand manuál) ── */
+    .logo {
+      position: absolute;
+      top: var(--logo-top);
+      left: 5vw;
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2vw, 1.8rem);
+      font-weight: 400;
+      z-index: 10;
+      letter-spacing: -.01em;
+    }
+
+    .logo--xl {
+      font-size: clamp(2rem, 3.5vw, 3rem) !important;
+    }
+
+    .slide--welcome .logo {
+      font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+    }
+
+    .slide--honest .logo {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+    }
+
+    .logo-cream { color: var(--cream); }
+    .logo-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ── TYPOGRAPHY — LARGE ── */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: clamp(.72rem, 1.2vw, .85rem);
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2vh;
+    }
+
+    .spark { color: var(--gold); font-size: .9em; }
+
+    h1, h2, h3.display {
+      font-family: var(--font-serif);
+      letter-spacing: -.02em;
+      line-height: 1.08;
+      font-weight: 400;
+    }
+
+    h1 { font-size: clamp(3.2rem, 7.5vw, 6.5rem); }
+    h2 { font-size: clamp(2.4rem, 5.5vw, 4.8rem); margin-bottom: 2vh; }
+
+    .gold { color: var(--gold); }
+
+    .text-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .rose { color: var(--rose); }
+
+    .lead {
+      font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+      line-height: 1.5;
+      color: var(--on-dark-85);
+      font-weight: 400;
+    }
+
+    .lead strong { font-weight: 500; color: var(--cream); }
+
+    .mega-stat {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .mega-label {
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      color: var(--muted);
+      margin-top: .5vh;
+      font-weight: 400;
+    }
+
+    /* ── GLASS PANELS ── */
+    .glass {
+      background: rgba(26,22,18,.88);
+      border: 0.5px solid var(--gold-border);
+      border-radius: var(--r-md);
+    }
+
+    .glass-dark {
+      background: rgba(26,22,18,.9);
+      border: 0.5px solid var(--gold-border);
+      border-radius: var(--r-md);
+    }
+
+    .slide--on-blush .glass,
+    .slide--on-blush .glass-dark {
+      background: rgba(255,255,255,.72);
+      border-color: rgba(201,168,76,.28);
+    }
+
+    .slide--on-blush .glass-dark { background: rgba(255,255,255,.85); }
+    .slide--on-blush .team-person p { color: rgba(26,22,18,.82); }
+    .slide--on-blush .pillar p { color: var(--muted); }
+
+    /* ── HERO META TAGS ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 3vh;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 22px;
+      border-radius: var(--r-sm);
+      font-family: var(--font-sans);
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 500;
+      background: var(--gold-dim);
+      border: 0.5px solid var(--gold-border);
+      color: var(--on-dark-85);
+    }
+
+    .tag--gold {
+      background: rgba(201,168,76,.22);
+      border-color: var(--gold);
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    /* ── BRAND ATMOSPHERE — puntíky/bokeh z bannerů ── */
+    .brand-atmosphere {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .brand-atmosphere span {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .brand-atmosphere span:nth-child(1) {
+      width: 38vw; height: 38vw; top: -12%; left: -10%;
+      background: radial-gradient(circle, rgba(201,168,76,.28) 0%, rgba(201,168,76,.08) 45%, transparent 70%);
+    }
+    .brand-atmosphere span:nth-child(2) {
+      width: 22vw; height: 22vw; top: 8%; right: 12%;
+      background: radial-gradient(circle, rgba(226,201,126,.2) 0%, transparent 65%);
+    }
+    .brand-atmosphere span:nth-child(3) {
+      width: 16vw; height: 16vw; top: 42%; left: 18%;
+      background: radial-gradient(circle, rgba(201,100,90,.18) 0%, transparent 68%);
+    }
+    .brand-atmosphere span:nth-child(4) {
+      width: 28vw; height: 28vw; bottom: -8%; right: -6%;
+      background: radial-gradient(circle, rgba(201,100,90,.22) 0%, rgba(249,212,218,.12) 40%, transparent 72%);
+    }
+    .brand-atmosphere span:nth-child(5) {
+      width: 10vw; height: 10vw; top: 28%; right: 32%;
+      background: radial-gradient(circle, rgba(201,168,76,.35) 0%, transparent 70%);
+    }
+    .brand-atmosphere span:nth-child(6) {
+      width: 8vw; height: 8vw; bottom: 22%; left: 8%;
+      background: radial-gradient(circle, rgba(249,212,218,.4) 0%, transparent 70%);
+    }
+
+    .brand-atmosphere--subtle span { opacity: .55; }
+
+    .brand-atmosphere--animated span {
+      animation: orbDrift 14s ease-in-out infinite;
+    }
+    .brand-atmosphere--animated span:nth-child(2) { animation-delay: -2s; }
+    .brand-atmosphere--animated span:nth-child(3) { animation-delay: -5s; }
+    .brand-atmosphere--animated span:nth-child(4) { animation-delay: -7s; }
+    .brand-atmosphere--animated span:nth-child(5) { animation-delay: -3s; animation-duration: 11s; }
+    .brand-atmosphere--animated span:nth-child(6) { animation-delay: -9s; animation-duration: 16s; }
+
+    @keyframes orbDrift {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: .7; }
+      33% { transform: translate(1.5vw, -2vh) scale(1.05); opacity: .95; }
+      66% { transform: translate(-1vw, 1.5vh) scale(.97); opacity: .8; }
+    }
+
+    @keyframes orbDriftLively {
+      0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: .8; }
+      20% { transform: translate(5vw, -4vh) scale(1.18) rotate(3deg); opacity: 1; }
+      45% { transform: translate(-4vw, 3.5vh) scale(.88) rotate(-2deg); opacity: .9; }
+      70% { transform: translate(3.5vw, 4vh) scale(1.1) rotate(2deg); opacity: 1; }
+    }
+
+    @keyframes spotlightPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .75; transform: scale(1.04); }
+    }
+
+    .brand-atmosphere--lively span {
+      animation: orbDriftLively 6s ease-in-out infinite;
+    }
+    .brand-atmosphere--lively span:nth-child(1) { animation-duration: 11s; }
+    .brand-atmosphere--lively span:nth-child(2) { animation-delay: -1.5s; animation-duration: 8s; }
+    .brand-atmosphere--lively span:nth-child(3) { animation-delay: -4s; animation-duration: 10s; }
+    .brand-atmosphere--lively span:nth-child(4) { animation-delay: -6s; animation-duration: 12s; }
+    .brand-atmosphere--lively span:nth-child(5) { animation-delay: -2s; animation-duration: 7s; }
+    .brand-atmosphere--lively span:nth-child(6) { animation-delay: -7s; animation-duration: 13s; }
+    .brand-atmosphere--lively span:nth-child(7) { animation-delay: -3s; animation-duration: 9.5s; width: 6vw; height: 6vw; top: 55%; right: 20%; background: radial-gradient(circle, rgba(201,168,76,.4) 0%, transparent 70%); }
+    .brand-atmosphere--lively span:nth-child(8) { animation-delay: -5s; animation-duration: 8.5s; width: 5vw; height: 5vw; bottom: 35%; left: 42%; background: radial-gradient(circle, rgba(249,212,218,.45) 0%, transparent 70%); }
+
+    .slide--welcome .brand-spotlight {
+      animation: spotlightPulse 8s ease-in-out infinite;
+    }
+
+    .brand-spotlight {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 45% at 12% 18%, rgba(201,168,76,.14) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 35% at 88% 78%, rgba(201,100,90,.1) 0%, transparent 50%);
+    }
+
+    /* ── POZADÍ — barvy z bannerů, bez textu ── */
+    .slide-bg--brand-welcome {
+      background: linear-gradient(128deg,
+        #0A0A0A 0%,
+        #1A1612 28%,
+        #2a1c24 52%,
+        #3d2832 72%,
+        rgba(253,236,239,.22) 100%);
+    }
+
+    .slide-bg--brand-light {
+      background: linear-gradient(158deg,
+        #FEF7F8 0%,
+        #FDECEF 48%,
+        #f8e4ea 100%);
+    }
+
+    .slide-bg--brand-dark {
+      background: linear-gradient(145deg, #0A0A0A 0%, #1A1612 45%, #221a1c 100%);
+    }
+
+    .slide-bg--blush { background: var(--blush-gradient); }
+    .slide-bg--ink { background: var(--ink); }
+    .slide-bg--blush-dark { background: var(--blush-dark-gradient); }
+
+    .slide--welcome { color: var(--cream); }
+    .slide--welcome .logo-cream { color: var(--cream); }
+    .slide--welcome .tag {
+      background: rgba(201,168,76,.14);
+      border-color: rgba(201,168,76,.35);
+      color: var(--cream);
+    }
+    .slide--welcome .tag--gold {
+      color: var(--gold-light);
+      background: rgba(201,168,76,.22);
+    }
+    .slide--welcome .lead { color: var(--on-dark-85); }
+
+    .slide--on-blush { color: var(--soft-black); }
+    .slide--on-blush .logo-cream { color: var(--soft-black); }
+    .slide--on-blush .lead { color: rgba(26,22,18,.82); }
+    .slide--on-blush .lead strong { color: var(--soft-black); }
+    .slide--on-blush .eyebrow { color: var(--gold); }
+    .slide--on-blush .tag { background: rgba(201,168,76,.12); color: var(--soft-black); border-color: rgba(201,168,76,.35); }
+    .slide--on-blush .tag--gold { color: #7A5A1E; }
+
+    /* ── WELCOME LAYOUT — hero úvodní obrazovka ── */
+    .slide--welcome-hero .slide-inner {
+      justify-content: center;
+      padding: 4vh 3vw 5vh 5vw;
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr minmax(300px, 24vw);
+      gap: 3vw;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      min-height: 78vh;
+    }
+
+    .welcome-grid .claim-text {
+      max-width: none;
+    }
+
+    .welcome-grid h1 {
+      font-size: clamp(4rem, 10vw, 8.5rem);
+      line-height: 1.02;
+      letter-spacing: -.03em;
+    }
+
+    .welcome-grid .eyebrow {
+      font-size: clamp(.85rem, 1.5vw, 1.15rem);
+      margin-bottom: 2.5vh;
+    }
+
+    .welcome-venue {
+      margin-top: 5vh;
+      font-size: clamp(1.35rem, 2.6vw, 2rem);
+    }
+
+    .tag--start {
+      font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+      padding: 16px 34px;
+    }
+
+    .qr-card-inline {
+      padding: 36px 40px;
+      text-align: center;
+      justify-self: end;
+      align-self: center;
+      max-width: 380px;
+      margin-right: 1vw;
+      background: var(--ink);
+      border: 0.5px solid var(--gold-border);
+      border-radius: var(--r-md);
+    }
+
+    .qr-card-inline img {
+      width: 280px;
+      height: auto;
+      border-radius: var(--r-md);
+      margin: 0 auto;
+      background: #fff;
+      display: block;
+    }
+
+    .qr-card-inline strong {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    /* ── ABOUT CENTERED ── */
+    .about-block {
+      width: 100%;
+      max-width: 1180px;
+      text-align: center;
+    }
+
+    .about-block .eyebrow { justify-content: center; }
+    .about-block .lead { margin: 0 auto; max-width: 820px; }
+
+    .pillars-row--center {
+      margin-top: 5vh;
+    }
+
+    /* ── HONEST CLAIM ── */
+    .honest-claim h2 {
+      font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+      line-height: 1.12;
+    }
+
+    /* ── TEAM — kompaktní medailonky ── */
+    .slide--team .logo--corner { display: none; }
+
+    .team-header {
+      text-align: center;
+      margin-bottom: 3vh;
+    }
+
+    .team-brand-logo {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      letter-spacing: -.01em;
+      margin-bottom: 2vh;
+      line-height: 1;
+    }
+
+    .team-brand-logo .logo-cream { color: var(--cream); }
+
+    .team-header .eyebrow {
+      justify-content: center;
+      margin-bottom: 1vh;
+    }
+
+    .team-header h2 {
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      margin-bottom: 0;
+    }
+
+    .team-person--compact {
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .team-person--compact .team-role {
+      margin-bottom: 14px;
+      color: var(--gold-light);
+    }
+
+    .team-person--compact .name {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+      font-weight: 500;
+      line-height: 1.2;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .overlay-pink-wash {
+      background: linear-gradient(155deg,
+        rgba(254,247,248,.82) 0%,
+        rgba(253,236,239,.72) 45%,
+        rgba(10,10,10,.55) 100%);
+    }
+
+    .slide--networking-photo { color: var(--soft-black); }
+    .slide--networking-photo .logo-cream { color: var(--cream); }
+    .slide--networking-photo .eyebrow { color: var(--gold); }
+    .slide--networking-photo .mega-stat { color: var(--gold); }
+    .slide--networking-photo .mega-label { color: rgba(26,22,18,.78); }
+    .slide--networking-photo .glass {
+      background: rgba(255,255,255,.82);
+      border-color: rgba(201,100,90,.25);
+    }
+
+    .slide--on-blush .topic-card {
+      background: rgba(255,255,255,.78);
+      border-color: rgba(201,168,76,.28);
+    }
+
+    .slide--on-blush .topic-card:not(.topic-card--rich) h3 { color: var(--soft-black); }
+    .slide--on-blush .topic-card--rich h3 { color: var(--soft-black); }
+
+    .slide--format-photo .format-big.glass {
+      background: rgba(10,10,10,.82);
+    }
+
+    /* ── TEAM CARDS — černá / blush, ne hnědá ── */
+    .team-person--dark {
+      background: rgba(10,10,10,.9);
+      border: 0.5px solid var(--gold-border);
+      border-radius: var(--r-md);
+    }
+
+    .team-person--blush {
+      background: rgba(254,247,248,.92);
+      border: 0.5px solid rgba(201,168,76,.28);
+      border-radius: var(--r-md);
+    }
+
+    .team-person--blush p { color: rgba(26,22,18,.85); }
+    .team-person--blush .team-role { color: var(--gold); }
+    .team-person--blush .name { color: var(--soft-black); }
+
+    /* ── PROGRAM SPLIT ── */
+    .slide--program .slide-inner h2 {
+      font-size: clamp(1.9rem, 4.2vw, 3.2rem);
+      margin-bottom: 1vh;
+    }
+
+    .slide--program .eyebrow { margin-bottom: 1vh; }
+
+    .program-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(2vw, 3vw, 4vw);
+      align-items: start;
+      width: 100%;
+      margin-top: 1vh;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .program-list {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(4px, 0.8vh, 10px);
+      width: 100%;
+      max-width: 780px;
+      margin-top: 0;
+    }
+
+    .prog-item {
+      display: grid;
+      grid-template-columns: clamp(68px, 9vw, 110px) 1fr;
+      gap: clamp(8px, 1.2vw, 16px);
+      align-items: center;
+      padding: clamp(8px, 1.2vh, 18px) clamp(12px, 1.5vw, 22px);
+      border-radius: var(--r-md);
+      border: 0.5px solid rgba(201,168,76,.15);
+      background: rgba(26,22,18,.55);
+    }
+
+    .prog-time {
+      font-family: var(--font-serif);
+      font-size: clamp(1rem, 1.8vw, 1.65rem);
+      font-weight: 400;
+      color: var(--gold);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.15;
+    }
+
+    .prog-block {
+      font-size: clamp(.82rem, 1.35vw, 1.2rem);
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .program-visual--single img {
+      width: 100%;
+      max-height: min(52vh, 520px);
+      object-fit: cover;
+      border-radius: var(--r-md);
+      border: 0.5px solid var(--gold-border);
+      box-shadow: 0 12px 40px rgba(10,10,10,.18);
+      animation: kenBurns 20s ease-in-out infinite alternate;
+    }
+
+    .program-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+    }
+
+    .program-visual img {
+      width: 100%;
+      border-radius: var(--r-md);
+      border: 0.5px solid var(--gold-border);
+      box-shadow: 0 12px 40px rgba(10,10,10,.35);
+      display: block;
+    }
+
+    .program-visual .prog-photo-main {
+      animation: kenBurns 18s ease-in-out infinite alternate;
+    }
+
+    .program-visual-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .program-visual-duo img {
+      animation: floatCard 6s ease-in-out infinite alternate;
+    }
+
+    .program-visual-duo img:nth-child(2) {
+      animation-delay: -3s;
+    }
+
+    @keyframes floatCard {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-8px); }
+    }
+
+    .slide--on-blush .prog-item {
+      background: rgba(255,255,255,.72);
+      border-color: rgba(201,168,76,.25);
+    }
+
+    .slide--on-blush .prog-item.highlight {
+      background: rgba(201,168,76,.16);
+    }
+
+    .slide--on-blush .prog-time,
+    .slide--on-blush .prog-block { color: var(--soft-black); }
+    .slide--on-blush .prog-item.highlight .prog-time { color: var(--rose); }
+    .slide--on-blush .prog-note { color: var(--muted); }
+
+    .slide--welcome.transition-slide { color: var(--cream); }
+    .slide--welcome.transition-slide .lead { color: var(--on-dark-85); }
+
+    /* ── TRANSITION / NOVINKY ── */
+    .transition-slide h1 {
+      font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+    }
+
+    .novinky-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 1100px;
+      margin-top: 4vh;
+    }
+
+    .novinka-card {
+      padding: 32px 28px;
+      text-align: center;
+      border-radius: var(--r-md);
+      background: rgba(10,10,10,.88);
+      border: 0.5px solid var(--gold-border);
+    }
+
+    .novinka-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 14px;
+    }
+
+    .novinka-card h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      margin-bottom: 8px;
+    }
+
+    .novinka-card p {
+      font-size: clamp(.9rem, 1.3vw, 1.05rem);
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .novinka-card--live {
+      grid-column: 1 / -1;
+      background: rgba(201,168,76,.14);
+      border-color: rgba(201,168,76,.45);
+    }
+
+    .slide-bg--networking {
+      background: linear-gradient(155deg,
+        #FEF7F8 0%,
+        #FDECEF 38%,
+        #F9D4DA 72%,
+        #f0b8c2 100%);
+    }
+
+    .slide--networking { color: var(--soft-black); }
+    .slide--networking .logo-cream { color: var(--soft-black); }
+    .slide--networking .eyebrow { color: var(--gold); }
+    .slide--networking .lead { color: rgba(26,22,18,.82); }
+    .slide--networking .lead strong { color: var(--soft-black); }
+    .slide--networking .mega-label { color: var(--muted); }
+
+    .slide--networking .glass {
+      background: rgba(255,255,255,.78);
+      border-color: rgba(201,100,90,.22);
+    }
+
+    .slide--networking .brand-atmosphere span:nth-child(3),
+    .slide--networking .brand-atmosphere span:nth-child(4),
+    .slide--networking .brand-atmosphere span:nth-child(6) {
+      opacity: .85;
+    }
+
+    .hub-final .brand-atmosphere--lively span { opacity: .9; }
+
+    /* ── BANNERS SIDE BY SIDE ── */
+    .banner-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 3vh;
+    }
+
+    .banner-duo img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--r-md);
+      border: 0.5px solid var(--gold-border);
+      display: block;
+      box-shadow: 0 8px 32px rgba(10,10,10,.12);
+    }
+
+    /* ── PROGRAM — jeden sloupec (legacy) ── */
+    .program-list--legacy { margin-top: 2vh; gap: 10px; }
+
+    .team-role {
+      font-family: var(--font-sans);
+      font-size: clamp(.72rem, 1.1vw, .85rem);
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+
+    .slide--on-blush .team-role { color: var(--gold); }
+
+    .team-person .name {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 10px;
+      line-height: 1.15;
+    }
+    /* ── QR FLOAT (závěr) ── */
+    .qr-float {
+      position: absolute;
+      right: 5vw;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      padding: 28px 32px;
+      text-align: center;
+      min-width: 240px;
+    }
+
+    .qr-float img {
+      width: 200px;
+      height: auto;
+      border-radius: var(--r-md);
+      margin: 12px auto;
+      background: #fff;
+      display: block;
+    }
+
+    .qr-float strong {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .qr-float p {
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── DVA QR KÓDY — závěr ── */
+    .qr-duo {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      gap: clamp(20px, 3vw, 32px);
+      margin-top: 4vh;
+      width: min(100%, 680px);
+      margin-left: auto;
+      margin-right: auto;
+      align-items: stretch;
+    }
+
+    .qr-duo .qr-card-inline {
+      justify-self: stretch;
+      margin-right: 0;
+      width: 100%;
+      max-width: none;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: clamp(24px, 3vw, 32px) clamp(20px, 2.5vw, 28px);
+    }
+
+    .qr-duo .qr-slot {
+      width: min(200px, 42vw);
+      height: min(200px, 42vw);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .qr-duo .qr-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    .qr-duo .qr-placeholder {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .hub-final .qr-card-inline p {
+      font-size: .9rem;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.45;
+    }
+
+    .slide--on-blush .qr-card-inline {
+      background: var(--ink);
+      border: 0.5px solid var(--gold-border);
+    }
+
+    .slide--on-blush .qr-card-inline strong { color: var(--gold); }
+
+    .qr-placeholder {
+      width: 200px;
+      height: 200px;
+      margin: 12px auto;
+      border-radius: var(--r-md);
+      border: 0.5px dashed var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      color: var(--muted);
+      padding: 20px;
+      line-height: 1.4;
+    }
+
+    /* ── PILLARS ROW ── */
+    .pillars-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+      margin-top: 4vh;
+    }
+
+    .pillar {
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .pillar .num {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--gold);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .pillar h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .pillar p {
+      font-size: clamp(.9rem, 1.3vw, 1.05rem);
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* ── CLAIM FULL SLIDES ── */
+    .claim-text {
+      max-width: 55vw;
+    }
+
+    .claim-text h2 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.05;
+    }
+
+    /* ── TEAM OVERLAY ── */
+    .team-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      width: 100%;
+      margin-top: auto;
+      align-items: stretch;
+    }
+
+    .team-person {
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-person h3 { display: none; }
+
+    .team-person p {
+      font-size: clamp(.78rem, 1.05vw, .9rem);
+      color: var(--on-dark-85);
+      line-height: 1.48;
+    }
+
+    /* ── PROGRAM GRID ── */
+    .program-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 40px;
+      width: 100%;
+      margin-top: 2vh;
+    }
+
+    .prog-item.highlight {
+      background: rgba(201,168,76,.14);
+      border-color: rgba(201,168,76,.4);
+    }
+
+    .prog-item.highlight .prog-time { color: var(--rose); }
+
+    .prog-note {
+      font-size: clamp(.85rem, 1.2vw, 1rem);
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    /* ── FORMAT BIG CARDS ── */
+    .format-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+      margin-top: 4vh;
+    }
+
+    .format-big {
+      padding: 36px 32px;
+      text-align: center;
+    }
+
+    .format-big .icon {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      margin-bottom: 16px;
+    }
+
+    .format-big h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.4vw, 2rem);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .format-big p {
+      font-size: clamp(.95rem, 1.4vw, 1.15rem);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── NETWORKING STATS ── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      width: 100%;
+      margin: 4vh 0;
+    }
+
+    .stat-box { text-align: center; }
+
+    /* ── TOPICS ── */
+    .slide--topics .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(14px, 2vw, 22px);
+      width: 100%;
+      margin-top: clamp(2vh, 3vh, 4vh);
+      align-items: stretch;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      width: 100%;
+      margin-top: 3vh;
+    }
+
+    .topic-card {
+      padding: 28px 26px;
+      border-radius: var(--r-md);
+      background: rgba(26,22,18,.88);
+      border: 0.5px solid var(--gold-border);
+    }
+
+    .topic-card--rich {
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: clamp(320px, 48vh, 480px);
+      box-shadow: 0 18px 50px rgba(26,22,18,.12);
+    }
+
+    .topic-visual {
+      position: relative;
+      height: clamp(150px, 24vh, 260px);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .topic-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+      display: block;
+    }
+
+    .topic-photo--1 { object-position: center 40%; }
+    .topic-photo--2 { object-position: center 38%; }
+    .topic-photo--3 { object-position: center 35%; }
+
+    .topic-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(26,22,18,.55) 0%, rgba(26,22,18,.08) 45%, transparent 100%),
+        linear-gradient(135deg, rgba(201,168,76,.1) 0%, transparent 50%);
+    }
+
+    .topic-pictogram {
+      position: absolute;
+      left: 50%;
+      bottom: -26px;
+      transform: translateX(-50%);
+      width: clamp(58px, 7vw, 76px);
+      height: clamp(58px, 7vw, 76px);
+      border-radius: 50%;
+      background: linear-gradient(145deg, #1A1612 0%, #2a2218 100%);
+      border: 2px solid rgba(201,168,76,.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 28px rgba(26,22,18,.28);
+      z-index: 2;
+    }
+
+    .topic-pictogram svg {
+      width: 54%;
+      height: 54%;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .topic-pictogram .fill-gold {
+      fill: var(--gold);
+      stroke: none;
+    }
+
+    .topic-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(26px, 3.2vh, 32px) clamp(18px, 2vw, 24px) clamp(18px, 2vh, 24px);
+      text-align: center;
+    }
+
+    .topic-card .num {
+      font-family: var(--font-sans);
+      font-size: clamp(.72rem, 1vw, .82rem);
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .topic-card h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.25rem, 2vw, 1.7rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: clamp(8px, 1vh, 12px);
+    }
+
+    .topic-patterns {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 0;
+    }
+
+    .topic-patterns li {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(201,168,76,.1);
+      border: 0.5px solid rgba(201,168,76,.32);
+      font-size: clamp(.68rem, 1vw, .78rem);
+      font-weight: 500;
+      letter-spacing: .02em;
+      color: var(--soft-black);
+      line-height: 1.2;
+    }
+
+    .topic-chip-icon {
+      display: inline-flex;
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .topic-chip-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .slide--on-blush .topic-card--rich {
+      background: rgba(255,255,255,.88);
+      border-color: rgba(201,168,76,.35);
+    }
+
+    .slide--on-blush .topic-card--rich .topic-visual-overlay {
+      background:
+        linear-gradient(to top, rgba(254,247,248,.88) 0%, rgba(254,247,248,.2) 42%, transparent 100%),
+        linear-gradient(135deg, rgba(201,168,76,.12) 0%, transparent 50%);
+    }
+
+    .slide--on-blush .topic-card--rich .topic-pictogram {
+      background: linear-gradient(145deg, #fff 0%, #FEF7F8 100%);
+      border-color: rgba(201,168,76,.5);
+    }
+
+    .slide--on-blush .topic-patterns li {
+      background: rgba(201,168,76,.12);
+      color: rgba(26,22,18,.88);
+    }
+
+    /* ── CINEMATIC TEXT BLOCK ── */
+    .cinematic {
+      max-width: 65vw;
+    }
+
+    .cinematic h2 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      margin-bottom: 2.5vh;
+    }
+
+    .cinematic .lead {
+      font-size: clamp(1.4rem, 2.6vw, 2rem);
+    }
+
+    .cinematic .sub {
+      margin-top: 2vh;
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* atmosphere helper — legacy bokeh removed */
+    /* ── ANIMATIONS ── */
+    .slide.active .anim { animation: rise .75s ease both; }
+    .slide.active .anim-1 { animation-delay: .08s; }
+    .slide.active .anim-2 { animation-delay: .2s; }
+    .slide.active .anim-3 { animation-delay: .35s; }
+    .slide.active .anim-4 { animation-delay: .5s; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(36px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── CONTROLS ── */
+    .controls {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: var(--ctrl-h);
+      background: rgba(10,10,10,.97);
+      border-top: 0.5px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 18px;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+    }
+
+    .ctrl-btn {
+      background: rgba(26,22,18,.8);
+      border: 0.5px solid var(--gold-border);
+      color: var(--cream);
+      border-radius: var(--r-sm);
+      padding: 8px 14px;
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s;
+      white-space: nowrap;
+      font-family: var(--font-sans);
+    }
+
+    .ctrl-btn:hover { background: rgba(201,168,76,.16); border-color: var(--gold); }
+    .ctrl-btn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+    .ctrl-btn--gold { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+    .ctrl-btn--gold:hover { background: var(--gold-light); }
+
+    .slide-dots {
+      display: flex;
+      gap: 5px;
+      flex: 1;
+      overflow-x: auto;
+      padding: 4px 0;
+    }
+
+    .dot {
+      flex-shrink: 0;
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      border: 1px solid rgba(201,168,76,.25);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .dot:hover { border-color: var(--gold); color: var(--gold); }
+    .dot.active { background: var(--gold); border-color: var(--gold); color: var(--ink); box-shadow: 0 4px 14px rgba(201,168,76,.35); }
+
+    .dot[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--soft-black);
+      border: 1px solid rgba(201,168,76,.3);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: .62rem;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .slide-counter { font-size: .75rem; color: var(--muted); min-width: 44px; text-align: center; }
+
+    .timer-panel {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(201,168,76,.22);
+      border-radius: 11px;
+    }
+
+    .timer-panel label { font-size: .62rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 500; }
+    .timer-input { width: 44px; background: rgba(0,0,0,.35); border: 0.5px solid var(--gold-border); border-radius: var(--r-sm); color: var(--cream); font-size: .82rem; font-weight: 500; text-align: center; padding: 5px; font-family: var(--font-sans); }
+    .timer-display { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--gold); min-width: 64px; text-align: center; font-variant-numeric: tabular-nums; }
+    .timer-display.warning { color: #f59e0b; }
+    .timer-display.danger { color: #ef4444; animation: pulse-t .6s ease infinite; }
+    @keyframes pulse-t { 50% { transform: scale(1.1); } }
+
+    .timer-done {
+      position: fixed; inset: 0;
+      background: rgba(201,100,90,.93);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 200;
+      opacity: 0; visibility: hidden;
+      transition: opacity .4s, visibility .4s;
+      cursor: pointer;
+    }
+
+    .timer-done.show { opacity: 1; visibility: visible; animation: flash-bg .8s ease; }
+    @keyframes flash-bg {
+      0% { background: rgba(201,168,76,.95); }
+      100% { background: rgba(201,100,90,.93); }
+    }
+
+    .timer-done h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(5rem, 14vw, 10rem);
+      font-weight: 400;
+      color: #fff;
+      animation: bounce-in .6s cubic-bezier(.34,1.56,.64,1);
+    }
+
+    .timer-done p { font-size: 1.4rem; color: rgba(255,255,255,.85); margin-top: 12px; }
+
+    @keyframes bounce-in {
+      from { transform: scale(.2); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .deck:fullscreen {
+      inset: 0;
+      height: 100dvh;
+    }
+
+    .deck:fullscreen ~ .controls {
+      display: none;
+    }
+
+    /* ── MAPA CESTY — celá obrazovka ── */
+    .slide--travel-map {
+      background: #F3EDE4;
+    }
+
+    .travel-map-full {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      background: #F3EDE4;
+    }
+
+    /* ── KALENDÁŘ AKCÍ ── */
+    .slide--calendar .slide-inner {
+      padding-bottom: 2vh;
+      justify-content: flex-start;
+    }
+
+    .slide--calendar h2 {
+      margin-bottom: 0.8vh;
+    }
+
+    .calendar-lead {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: var(--muted);
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto clamp(2.5vh, 3.5vh, 4vh);
+      line-height: 1.45;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(14px, 1.6vw, 20px);
+      width: 100%;
+      align-items: stretch;
+    }
+
+    .calendar-item {
+      display: flex;
+      flex-direction: column;
+      padding: clamp(22px, 2.8vh, 30px) clamp(18px, 1.6vw, 22px);
+      border-radius: var(--r-md);
+      background: rgba(255,255,255,.9);
+      border: 0.5px solid rgba(201,168,76,.32);
+      text-align: left;
+      min-height: clamp(280px, 40vh, 360px);
+      box-shadow: 0 10px 36px rgba(26,22,18,.08);
+    }
+
+    .calendar-item--highlight {
+      border: 2px solid rgba(201,168,76,.5);
+      box-shadow: 0 14px 44px rgba(201,168,76,.14);
+    }
+
+    .calendar-type {
+      font-family: var(--font-sans);
+      font-size: clamp(.78rem, 1.1vw, .9rem);
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: clamp(10px, 1.2vh, 14px);
+    }
+
+    .calendar-date {
+      font-family: var(--font-serif);
+      font-size: clamp(1.25rem, 2.1vw, 1.65rem);
+      color: var(--gold);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.25;
+      margin-bottom: clamp(12px, 1.5vh, 16px);
+    }
+
+    .calendar-day {
+      display: block;
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      color: rgba(26,22,18,.72);
+      margin-top: 4px;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+
+    .calendar-item h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      font-weight: 500;
+      line-height: 1.22;
+      color: var(--soft-black);
+      margin-bottom: clamp(10px, 1.2vh, 14px);
+      flex: 1;
+    }
+
+    .calendar-item p {
+      font-size: clamp(.95rem, 1.45vw, 1.12rem);
+      color: rgba(26,22,18,.8);
+      line-height: 1.45;
+      margin-top: auto;
+    }
+
+    @media (max-width: 1100px) {
+      .calendar-grid { grid-template-columns: repeat(2, 1fr); }
+      .calendar-item { min-height: clamp(220px, 28vh, 280px); }
+    }
+
+    @media (max-width: 700px) {
+      .calendar-grid { grid-template-columns: 1fr; }
+      .calendar-item { min-height: auto; }
+    }
+
+    /* ── CESTOVÁNÍ — automatická smyčka fotek ── */
+    .slide--travel-loop {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .travel-stage {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    .travel-vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at center, transparent 42%, rgba(10,10,10,.38) 100%),
+        linear-gradient(to top, rgba(10,10,10,.28) 0%, transparent 18%, transparent 82%, rgba(10,10,10,.28) 100%);
+    }
+
+    .travel-frame {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.1s ease, visibility 1.1s;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      background: var(--ink);
+    }
+
+    .travel-frame.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+
+    .travel-photo-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .travel-photo-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+    }
+
+    .travel-frame.active .travel-photo-wrap img {
+      animation: travelKenBurns 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes travelKenBurns {
+      from { transform: scale(1) translate(0, 0); }
+      to   { transform: scale(1.08) translate(-1%, -.8%); }
+    }
+
+    .travel-frame--single .travel-photo-wrap {
+      position: absolute;
+      inset: 0;
+    }
+
+    .travel-frame--pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      width: 100%;
+      height: 100%;
+      background: var(--ink);
+    }
+
+    .travel-frame--solo {
+      position: relative;
+    }
+
+    .travel-frame--solo .travel-photo-wrap--bg {
+      position: absolute;
+      inset: -10%;
+      background-size: cover;
+      background-position: center;
+      filter: blur(26px) brightness(.42) saturate(1.1);
+      transform: scale(1.12);
+    }
+
+    .travel-frame.active .travel-photo-wrap--bg {
+      animation: travelKenBurns 14s ease-in-out infinite alternate;
+    }
+
+    .travel-frame--solo .travel-photo-wrap--fg {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      width: min(46vw, 56vh);
+      margin: 0 auto;
+      box-shadow: 0 24px 80px rgba(0,0,0,.45);
+    }
+
+    .travel-frame--solo .travel-photo-wrap--fg img {
+      object-fit: cover;
+    }
+
+    .travel-watermark {
+      position: absolute;
+      left: 4vw;
+      bottom: 3.5vh;
+      z-index: 4;
+      font-family: var(--font-serif);
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      color: rgba(245,240,232,.72);
+      letter-spacing: -.01em;
+      pointer-events: none;
+      text-shadow: 0 2px 18px rgba(0,0,0,.55);
+    }
+
+    .travel-watermark .logo-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .travel-watermark .logo-cream {
+      color: rgba(245,240,232,.85);
+    }
+
+    @media (max-width: 900px) {
+      .travel-frame--pair { grid-template-columns: 1fr; }
+      .travel-frame--solo .travel-photo-wrap--fg { width: min(78vw, 70vh); }
+    }
+
+    /* ── ČASOMÍRA — slide na obrazovce ── */
+    .slide--timer-stage { color: var(--cream); }
+    .slide--timer-stage .logo-cream { color: var(--cream); }
+
+    .slide--timer-stage .slide-inner--timer {
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 2vh;
+    }
+
+    .deck:fullscreen .slide--timer-stage .timer-stage-display {
+      font-size: clamp(6rem, min(38vw, 58vh), 22rem);
+    }
+
+    .timer-stage-hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 0;
+    }
+
+    .timer-stage-hero .eyebrow {
+      margin-bottom: clamp(1vh, 1.5vh, 2vh);
+    }
+
+    .timer-stage-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.15;
+      text-align: center;
+      max-width: min(92vw, 880px);
+      margin: 0 auto clamp(2vh, 3.5vh, 5vh);
+      color: var(--cream);
+    }
+
+    .timer-stage-title .text-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .deck:fullscreen .timer-stage-title {
+      font-size: clamp(1.35rem, 2.8vw, 2.2rem);
+      margin-bottom: clamp(1.5vh, 2.5vh, 3.5vh);
+    }
+
+    .timer-stage-display {
+      font-family: var(--font-serif);
+      font-size: clamp(5rem, min(32vw, 48vh), 20rem);
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.03em;
+      margin: 0;
+      text-shadow: 0 6px 60px rgba(201,168,76,.4);
+      transition: color .3s, transform .3s;
+    }
+
+    .timer-stage-display.warning {
+      color: #f59e0b;
+      text-shadow: 0 6px 60px rgba(245,158,11,.45);
+    }
+
+    .timer-stage-display.danger {
+      color: #ef4444;
+      animation: pulse-t-big .6s ease infinite;
+      text-shadow: 0 6px 64px rgba(239,68,68,.5);
+    }
+
+    @keyframes pulse-t-big {
+      50% { transform: scale(1.05); }
+    }
+
+    .timer-stage-display.running {
+      color: var(--gold-light);
+    }
+
+    @media (max-width: 1000px) {
+      .welcome-grid { grid-template-columns: 1fr; }
+      .qr-card-inline { justify-self: center; }
+      .qr-duo { grid-template-columns: 1fr; max-width: 320px; }
+      .banner-duo { grid-template-columns: 1fr; }
+      .program-layout { grid-template-columns: 1fr; }
+      .program-visual--single img { max-height: 28vh; }
+      .slide-inner { padding: 4vh 5vw; }
+      .pillars-row, .format-row, .team-bar, .stats-row, .novinky-grid { grid-template-columns: 1fr; }
+      .topics-grid, .slide--topics .topics-grid { grid-template-columns: 1fr; }
+      .topic-card--rich { min-height: auto; }
+      .topic-visual { height: clamp(100px, 14vh, 140px); }
+      .cinematic, .claim-text { max-width: 100%; }
+      .novinka-card--live { grid-column: auto; }
+    }
+
+    /* Nižší obrazovka — notebook bez fullscreen */
+    @media (max-height: 860px) {
+      :root {
+        --logo-top: 2.5vh;
+        --logo-clearance: var(--logo-clearance-compact);
+        --logo-clearance-xl: clamp(10.5vh, 12vh, 13vh);
+      }
+      .slide-inner { padding-bottom: 2vh; }
+      .slide--welcome-hero > .logo + .slide-inner { padding: 3vh 3vw 4vh 5vw; }
+      .logo { font-size: clamp(1.1rem, 1.8vw, 1.5rem); }
+      h1 { font-size: clamp(2.6rem, 6.5vw, 5rem); }
+      h2 { font-size: clamp(1.9rem, 4.5vw, 3.5rem); margin-bottom: 1.5vh; }
+      .eyebrow { margin-bottom: 1.2vh; }
+      .welcome-grid { min-height: auto; }
+      .welcome-grid h1 { font-size: clamp(2.8rem, 7.5vw, 6rem); }
+      .pillars-row { margin-top: 2.5vh; gap: 12px; }
+      .pillar { padding: 18px 16px; }
+      .format-row { margin-top: 2vh; gap: 14px; }
+      .format-big { padding: 22px 18px; }
+      .topics-grid { gap: 10px; margin-top: 1.5vh; }
+      .topic-card { padding: 18px 16px; }
+      .slide--topics .topic-card--rich { min-height: clamp(280px, 42vh, 380px); }
+      .slide--topics .topic-patterns { gap: 6px; }
+      .slide--topics .topic-patterns li { padding: 5px 9px; }
+      .calendar-grid { gap: 12px; }
+      .calendar-item { padding: 18px 16px; min-height: clamp(200px, 32vh, 260px); }
+      .calendar-date { font-size: clamp(1.1rem, 1.8vw, 1.35rem); }
+      .calendar-item h3 { font-size: clamp(1.05rem, 1.7vw, 1.35rem); }
+      .stats-row { margin: 2vh 0; gap: 14px; }
+      .team-header h2 { font-size: clamp(2.2rem, 5vw, 4rem); }
+      .team-person--compact { padding: 16px 14px; }
+
+      .slide--program .program-layout {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 2vw;
+      }
+      .slide--program .prog-item {
+        padding: 6px 12px;
+        grid-template-columns: 62px 1fr;
+        gap: 8px;
+      }
+      .slide--program .prog-time { font-size: clamp(.95rem, 1.6vw, 1.25rem); }
+      .slide--program .prog-block { font-size: clamp(.78rem, 1.2vw, .95rem); }
+      .slide--program .program-visual--single img { max-height: min(42vh, 360px); }
+    }
+
+    @media (max-height: 720px) {
+      .slide--program .program-layout {
+        grid-template-columns: 1fr 0.75fr;
+        gap: 1.5vw;
+      }
+      .slide--program h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); }
+      .slide--program .prog-item { padding: 5px 10px; }
+      .slide--program .program-list { gap: 3px; }
+      .timer-stage-display { font-size: clamp(4rem, min(28vw, 40vh), 12rem); }
+    }
+
+    @media (max-width: 900px) and (max-height: 800px) {
+      .slide--program .program-layout { grid-template-columns: 1fr; }
+      .slide--program .program-visual--single { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- 1 · ÚVOD -->
+  <section class="slide slide--welcome active" data-title="Úvod">
+    <div class="slide-bg slide-bg--brand-welcome"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--animated brand-atmosphere--lively" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="cinematic anim anim-1" style="max-width:1000px;text-align:center">
+        <p class="eyebrow" style="justify-content:center"><span class="spark">✦</span> Novinky a živé ukázky AI · 18:30</p>
+        <h1 class="anim anim-2">Co se právě teď <span class="text-gold">děje v AI</span></h1>
+        <p class="lead anim anim-3" style="margin-top:2vh">10 novinek z jara 2026 — a 3, které musíš znát.</p>
+        <div class="tags anim anim-4" style="justify-content:center">
+          <span class="tag tag--gold">Katka &amp; Péťa</span>
+          <span class="tag">Pro začátečnice i pokročilé</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · CO VÁS ČEKÁ -->
+  <section class="slide slide--on-blush" data-title="Co vás čeká">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="about-block">
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Jak to bude</p>
+        <h2 class="anim anim-2">Deset novinek, <span class="text-gold">tři HOT</span></h2>
+        <p class="lead anim anim-3">Žádná technika — jen to, co můžete použít hned. Od přístupných věcí pro každou až po to, kam celá AI míří.</p>
+        <div class="pillars-row pillars-row--center anim anim-4">
+          <div class="pillar glass">
+            <div class="num">10</div>
+            <h3>novinek</h3>
+            <p>Co je nového a k čemu to je</p>
+          </div>
+          <div class="pillar glass">
+            <div class="num">3</div>
+            <h3>HOT tipy</h3>
+            <p>Co si zapamatovat především</p>
+          </div>
+          <div class="pillar glass">
+            <div class="num">0</div>
+            <h3>nuda</h3>
+            <p>Praktické tipy a živé ukázky</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · TIP 1 — PAMĚŤ -->
+  <section class="slide slide--on-blush" data-title="Tip 1 · Paměť">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-narrow">
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 1 / 10 · pro začátečnice</p>
+        <h2 class="anim anim-2">ChatGPT si vás <span class="text-gold">pamatuje sám</span></h2>
+        <p class="lead anim anim-3">Od června už nemusíte říkat „zapamatuj si…". ChatGPT sám zachytí kontext z rozhovorů a drží si ho dál. Řeknete jednou „jsem HR manažerka v e-commerce, odpovídej stručně česky" — a platí to napořád. Máte i stránku, kde vidíte, co o vás ví, a můžete to mazat.</p>
+        <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
+          <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „Řeknete jí to jednou — a ona si to pamatuje napořád."</p>
+        </div>
+        <p class="sub anim anim-4" style="margin-top:2vh;color:var(--muted)">Zdroj: OpenAI · od 4. 6. 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · TIP 2 — EXCEL/SHEETS -->
+  <section class="slide slide--on-blush" data-title="Tip 2 · Tabulky">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-narrow">
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 2 / 10 · pro všechny</p>
+        <h2 class="anim anim-2">Excel a Sheets, co <span class="text-gold">poslouchají řeč</span></h2>
+        <p class="lead anim anim-3">Gemini v Google Sheets postaví celou formátovanou tabulku včetně grafů z jednoho požadavku. ChatGPT přibyl přímo do bočního panelu Excelu i Sheets — pomůže s rozpočty, vzorci a čištěním dat na místě.</p>
+        <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
+          <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „Udělej mi přehled tržeb z těchhle dat a ukaž trend — a tabulka vznikne sama."</p>
+        </div>
+        <p class="sub anim anim-4" style="margin-top:2vh;color:var(--muted)">Zdroj: Google Workspace · ChatGPT · jaro 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · TIP 3 — OBRÁZKY -->
+  <section class="slide slide--on-blush" data-title="Tip 3 · Obrázky">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-narrow">
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 3 / 10 · pro všechny</p>
+        <h2 class="anim anim-2">Generování obrázků <span class="text-gold">konečně umí text</span></h2>
+        <p class="lead anim anim-3">ChatGPT Images 2.0 zvládne až 8 obrázků z jednoho zadání, 2K rozlišení a hlavně čitelný text v obrázku. Google Nano Banana 2 jde až do 4K. Konečně vyrobíte vizuál s nápisem „LETNÍ SLEVA 50 %", co opravdu sedí.</p>
+        <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
+          <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „Reklamní vizuál s čitelným nápisem na první dobrou — tohle dřív nešlo." <span style="color:var(--muted)">(ukázat naživo)</span></p>
+        </div>
+        <p class="sub anim anim-4" style="margin-top:2vh;color:var(--muted)">Zdroj: OpenAI · Google · duben 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · TIP 4 — AI AGENTI (HOT) -->
+  <section class="slide" data-title="HOT · AI agenti">
+    <div class="slide-bg slide-bg--brand-dark"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--animated brand-atmosphere--lively" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-wide" style="max-width:1150px">
+        <p class="eyebrow anim anim-1" style="justify-content:center;color:var(--rose)"><span class="spark" style="color:var(--rose)">🔥</span> HOT tip 1 ze 3</p>
+        <h2 class="anim anim-2" style="text-align:center">AI agenti: od chatu k <span class="text-gold">„udělej to za mě"</span></h2>
+        <p class="lead anim anim-3" style="text-align:center;max-width:900px;margin:2vh auto 0">ChatGPT poradí. <strong>Agent</strong> má prohlížeč i přístup k vašim aplikacím a úkol vyřídí za vás — prohledá weby, porovná, sestaví report, připraví podklady. Před nákupem nebo odesláním se vždy zeptá.</p>
+        <div class="stats-row anim anim-4" style="margin-top:3.5vh">
+          <div class="stat-box glass"><div class="mega-stat">57 %</div><div class="mega-label">firem už používá AI agenty</div></div>
+          <div class="stat-box glass"><div class="mega-stat">7 min</div><div class="mega-label">z 5 hodin → analýza hrozeb (eSentire)</div></div>
+          <div class="stat-box glass"><div class="mega-stat">+500 %</div><div class="mega-label">nárůst používání za 6 týdnů (Freshfields)</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · TIP 5 — CANVA -->
+  <section class="slide slide--on-blush" data-title="Tip 5 · Canva">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-narrow">
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 5 / 10 · pro všechny</p>
+        <h2 class="anim anim-2">Canva AI 2.0: <span class="text-gold">kampaň z jedné věty</span></h2>
+        <p class="lead anim anim-3">Popíšete kampaň přirozeným jazykem a Canva vygeneruje kompletní editovatelný design ve vašem brandu. Novinky: pamatuje si váš styl, napojí se na Slack, Gmail, Drive či Notion a umí plánovat obsah na pozadí.</p>
+        <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
+          <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „Naplánuj kampaň pro letní kolekci — a vznikne všechno najednou: posty, bannery, e-mail."</p>
+        </div>
+        <p class="sub anim anim-4" style="margin-top:2vh;color:var(--muted)">Zdroj: Canva · 16. 4. 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · TIP 6 — AI LICHOTÍ (HOT) -->
+  <section class="slide" data-title="HOT · AI lichotí">
+    <div class="slide-bg slide-bg--brand-dark"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--animated brand-atmosphere--lively" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-wide" style="max-width:1100px">
+        <p class="eyebrow anim anim-1" style="justify-content:center;color:var(--rose)"><span class="spark" style="color:var(--rose)">🔥</span> HOT tip 2 ze 3</p>
+        <h2 class="anim anim-2" style="text-align:center">Váš chatbot vám <span class="text-gold">lichotí</span></h2>
+        <div class="stats-row anim anim-3" style="margin-top:1vh;justify-content:center">
+          <div class="stat-box glass" style="max-width:420px"><div class="mega-stat">49 %</div><div class="mega-label">častěji vám dá za pravdu než člověk</div></div>
+        </div>
+        <p class="lead anim anim-3" style="text-align:center;max-width:900px;margin:2.5vh auto 0">Když mu oponujete, nezačne argumentovat líp — jen přitvrdí. Trik: mluvte s ní <strong>jako s kritikem, ne s kamarádkou</strong>.</p>
+        <div class="glass anim anim-4" style="margin:3vh auto 0;max-width:880px;padding:22px 28px;border-radius:14px;text-align:center">
+          <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „Jsi zkušená poradkyně, buď ke mně kritická a oponuj mi, když se pletu."</p>
+        </div>
+        <p class="sub anim anim-4" style="margin-top:2vh;text-align:center;color:var(--on-dark-65)">Zdroj: Scientific American · Northeastern University</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · TIP 7 — NEDŮVĚŘUJ VYHLEDÁVÁNÍ -->
+  <section class="slide slide--on-blush" data-title="Tip 7 · Pozor na zdroje">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-narrow">
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 7 / 10 · pro všechny</p>
+        <h2 class="anim anim-2">Nedůvěřujte slepě tomu, co AI <span class="text-gold">„najde"</span></h2>
+        <p class="lead anim anim-3">Výzkumníci z Cornell ukázali, že stačí vložit <strong>13 slov</strong> do běžného komentáře na webu a AI vyhledávač pak v desítkách procent případů doporučí vymyšlený produkt nebo podvod. AI věří tomu, co najde na internetu — a to se dá zneužít.</p>
+        <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
+          <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „AI vyhledávání je skvělý sluha, ale špatný pán. Důležité věci si ověřujte."</p>
+        </div>
+        <p class="sub anim anim-4" style="margin-top:2vh;color:var(--muted)">Zdroj: Cornell Tech · Tom's Guide · 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · TIP 8 — VLÁDA VYPNULA MODEL (HOT) -->
+  <section class="slide" data-title="HOT · Vypnutý model">
+    <div class="slide-bg slide-bg--brand-dark"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--animated brand-atmosphere--lively" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-wide" style="max-width:1150px">
+        <p class="eyebrow anim anim-1" style="justify-content:center;color:var(--rose)"><span class="spark" style="color:var(--rose)">🔥</span> HOT tip 3 ze 3</p>
+        <h2 class="anim anim-2" style="text-align:center">Špičkový model vypnula <span class="text-gold">vláda — přes noc</span></h2>
+        <p class="lead anim anim-3" style="text-align:center;max-width:920px;margin:2vh auto 0">Anthropic vydal svůj nejsilnější model (Claude Fable 5) a o tři dny později ho americká vláda nařídila vypnout. Ne firma — vláda. A protože nešlo ověřit občanství uživatelů, vypnul se rovnou pro celý svět.</p>
+        <div class="stats-row anim anim-4" style="margin-top:3.5vh">
+          <div class="stat-box glass"><div class="mega-stat">3 dny</div><div class="mega-label">od spuštění k vypnutí</div></div>
+          <div class="stat-box glass"><div class="mega-stat">1×</div><div class="mega-label">poprvé v historii to udělala vláda</div></div>
+          <div class="stat-box glass"><div class="mega-stat">50 mil.</div><div class="mega-label">řádků kódu přepsal Stripe za 1 den</div></div>
+        </div>
+        <p class="sub anim anim-4" style="margin-top:2.5vh;text-align:center;color:var(--on-dark-65)">Poučení: nestavte nic důležitého jen na jednom nejnovějším nástroji. · Zdroj: Anthropic, NBC</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · TIP 9 — AGENTNÍ COMMERCE -->
+  <section class="slide slide--on-blush" data-title="Tip 9 · Nákupy">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-narrow">
+        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 9 / 10 · kam to směřuje</p>
+        <h2 class="anim anim-2">AI brzy <span class="text-gold">nakoupí za vás</span></h2>
+        <p class="lead anim anim-3">Visa, Mastercard, PayPal i Google už pilotují svět, kde za vás nakoupí a vyřídí věci AI agent — Google umí koupit z Etsy nebo Wayfair přímo v chatu. Nová otázka: když za vás agent zaplatí, jak prodejce pozná, že je to fakt <strong>váš</strong> agent, a ne podvodník?</p>
+        <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
+          <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „Otázka už nebude ‚umí to AI?', ale ‚komu věřit?'."</p>
+        </div>
+        <p class="sub anim anim-4" style="margin-top:2vh;color:var(--muted)">Zdroj: VUX World · Visa, Mastercard, Google · 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · TIP 10 — ŽENY V AI (závěr tipů) -->
+  <section class="slide slide--on-blush" data-title="Tip 10 · Ženy v AI">
+    <div class="slide-bg slide-bg--brand-light"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="content-wide" style="max-width:1100px">
+        <p class="eyebrow anim anim-1" style="justify-content:center"><span class="spark">✦</span> Tip 10 / 10 · proč tu dnes jsme</p>
+        <h2 class="anim anim-2" style="text-align:center">Ženy v AI a <span class="text-gold">český kontext</span></h2>
+        <div class="stats-row anim anim-3" style="margin-top:1vh">
+          <div class="stat-box glass"><div class="mega-stat">32→36 %</div><div class="mega-label">podíl žen v AI kurzech za rok</div></div>
+          <div class="stat-box glass"><div class="mega-stat">47 %</div><div class="mega-label">pracovní síly tvoří ženy</div></div>
+          <div class="stat-box glass"><div class="mega-stat">83 %</div><div class="mega-label">lidí v profesích nejvíc ohrožených AI</div></div>
+        </div>
+        <p class="lead anim anim-4" style="text-align:center;max-width:880px;margin:3vh auto 0">Přesně proto má smysl se vzdělávat a potkávat. <strong>Kdo se v AI orientuje, mění hrozbu v příležitost — a proto jsme dnes tady.</strong></p>
+        <p class="sub anim anim-4" style="margin-top:1.5vh;text-align:center;color:var(--muted)">Zdroj: Coursera · HR Dive · 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · ZÁVĚR -->
+  <section class="slide slide--welcome transition-slide" data-title="Díky">
+    <div class="slide-bg slide-bg--brand-welcome"></div>
+    <div class="brand-spotlight" aria-hidden="true"></div>
+    <div class="brand-atmosphere brand-atmosphere--animated brand-atmosphere--lively" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
+    <div class="slide-inner slide-inner--center">
+      <div class="cinematic anim anim-1" style="max-width:920px;text-align:center">
+        <p class="eyebrow" style="justify-content:center"><span class="spark">✦</span> A teď</p>
+        <h1>Díky! <span class="text-gold">Jdeme na networking.</span></h1>
+        <p class="lead anim anim-3" style="margin-top:2vh">Vyzkoušejte si dnešní tipy u stolů — a sdílejte, co vám funguje.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="controls">
+  <button class="ctrl-btn" id="btn-prev" title="Předchozí (←)">←</button>
+  <button class="ctrl-btn" id="btn-next" title="Další (→)">→</button>
+  <span class="slide-counter" id="counter">1 / 13</span>
+  <div class="slide-dots" id="dots"></div>
+  <div class="timer-panel">
+    <label>Čas</label>
+    <input type="number" class="timer-input" id="timer-min" value="15" min="1" max="99">
+    <span style="color:var(--muted);font-size:.7rem">min</span>
+    <button class="ctrl-btn" id="btn-timer-start" title="Spustit (T)">▶</button>
+    <button class="ctrl-btn" id="btn-timer-stop">■</button>
+    <button class="ctrl-btn" id="btn-timer-reset">↺</button>
+    <span class="timer-display" id="timer-display">15:00</span>
+    <button class="ctrl-btn" id="btn-preset-15">15′</button>
+    <button class="ctrl-btn" id="btn-preset-10">10′</button>
+  </div>
+  <button class="ctrl-btn ctrl-btn--gold" id="btn-fullscreen" title="Celá obrazovka (F)">⛶</button>
+</div>
+
+<div class="timer-done" id="timer-done">
+  <h2>ČAS!</h2>
+  <p>Klikni kamkoliv pro zavření</p>
+</div>
+
+<script>
+(function () {
+  const deck = document.getElementById('deck');
+  const slides = Array.from(deck.querySelectorAll('.slide'));
+  const dotsContainer = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+  let current = 0;
+
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.textContent = i + 1;
+    dot.title = slide.dataset.title || ('Slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.dot');
+
+  function goTo(index) {
+    if (index < 0 || index >= slides.length || index === current) return;
+    slides[current].classList.remove('active');
+    slides[current].classList.add('prev');
+    const old = current;
+    current = index;
+    slides[current].classList.remove('prev');
+    slides[current].classList.add('active');
+    setTimeout(() => slides[old].classList.remove('prev'), 620);
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    counter.textContent = (current + 1) + ' / ' + slides.length;
+    syncTravelLoop();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  document.getElementById('btn-next').addEventListener('click', next);
+  document.getElementById('btn-prev').addEventListener('click', prev);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.matches('input, button, select, textarea')) return;
+    if (e.target.closest('.controls')) return;
+    switch (e.key) {
+      case 'ArrowRight': case ' ': case 'PageDown': e.preventDefault(); next(); break;
+      case 'ArrowLeft': case 'PageUp': e.preventDefault(); prev(); break;
+      case 'Home': e.preventDefault(); goTo(0); break;
+      case 'End': e.preventDefault(); goTo(slides.length - 1); break;
+      case 'f': case 'F': e.preventDefault(); toggleFullscreen(); break;
+      case 't': case 'T': e.preventDefault(); startTimer(); break;
+      default:
+        if (e.key >= '0' && e.key <= '9') {
+          const n = e.key === '0' ? 9 : parseInt(e.key, 10) - 1;
+          if (n < slides.length) goTo(n);
+        }
+    }
+  });
+
+  let touchX = 0;
+  deck.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].screenX; }, { passive: true });
+  deck.addEventListener('touchend', (e) => {
+    const diff = touchX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+  }, { passive: true });
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) (deck.requestFullscreen || deck.webkitRequestFullscreen).call(deck);
+    else document.exitFullscreen();
+  }
+  document.getElementById('btn-fullscreen').addEventListener('click', toggleFullscreen);
+
+  const timerMin = document.getElementById('timer-min');
+  const timerDisplay = document.getElementById('timer-display');
+  const slideTimerDisplays = document.querySelectorAll('.timer-stage-display');
+  const btnTimerStart = document.getElementById('btn-timer-start');
+  const timerDone = document.getElementById('timer-done');
+  let timerSeconds = 15 * 60, timerInterval = null, timerRunning = false, timerPaused = false;
+
+  function formatTime(sec) {
+    return Math.floor(sec / 60) + ':' + String(sec % 60).padStart(2, '0');
+  }
+
+  function applyTimerVisualState() {
+    const states = ['warning', 'danger', 'running'];
+    const targets = [timerDisplay, ...slideTimerDisplays];
+    targets.forEach((el) => {
+      if (!el) return;
+      el.classList.remove(...states);
+      if (timerRunning) el.classList.add('running');
+      if (timerSeconds <= 60 && timerSeconds > 10) el.classList.add('warning');
+      if (timerSeconds <= 10) el.classList.add('danger');
+    });
+    btnTimerStart.classList.toggle('active', timerRunning);
+  }
+
+  function updateTimerDisplay() {
+    const text = formatTime(timerSeconds);
+    timerDisplay.textContent = text;
+    slideTimerDisplays.forEach((el) => { el.textContent = text; });
+    applyTimerVisualState();
+  }
+
+  function setTimerMinutes(m) {
+    const minutes = Math.min(99, Math.max(1, parseInt(m, 10) || 15));
+    timerMin.value = minutes;
+    timerSeconds = minutes * 60;
+    updateTimerDisplay();
+  }
+
+  function startTimer() {
+    if (timerRunning) return;
+    if (!timerPaused) setTimerMinutes(parseInt(timerMin.value, 10) || 15);
+    timerPaused = false;
+    timerRunning = true;
+    timerInterval = setInterval(() => {
+      timerSeconds--;
+      updateTimerDisplay();
+      if (timerSeconds <= 0) { stopTimer(); timerPaused = false; showTimerDone(); }
+    }, 1000);
+    updateTimerDisplay();
+  }
+
+  function stopTimer() {
+    timerRunning = false;
+    timerPaused = timerSeconds > 0;
+    clearInterval(timerInterval);
+    timerInterval = null;
+    applyTimerVisualState();
+  }
+
+  function resetTimer() {
+    stopTimer();
+    timerPaused = false;
+    setTimerMinutes(parseInt(timerMin.value, 10) || 15);
+  }
+
+  function showTimerDone() {
+    timerDone.classList.add('show');
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      [0, .15, .3].forEach((d) => {
+        const osc = ctx.createOscillator(), gain = ctx.createGain();
+        osc.connect(gain); gain.connect(ctx.destination);
+        osc.frequency.value = 880; gain.gain.value = .15;
+        osc.start(ctx.currentTime + d); osc.stop(ctx.currentTime + d + .12);
+      });
+    } catch (_) {}
+  }
+
+  timerDone.addEventListener('click', () => timerDone.classList.remove('show'));
+  btnTimerStart.addEventListener('click', startTimer);
+  document.getElementById('btn-timer-stop').addEventListener('click', stopTimer);
+  document.getElementById('btn-timer-reset').addEventListener('click', resetTimer);
+  document.getElementById('btn-preset-15').addEventListener('click', () => { resetTimer(); setTimerMinutes(15); });
+  document.getElementById('btn-preset-10').addEventListener('click', () => { resetTimer(); setTimerMinutes(10); });
+  timerMin.addEventListener('change', () => { if (!timerRunning) setTimerMinutes(parseInt(timerMin.value, 10) || 15); });
+  setTimerMinutes(15);
+
+  /* ── Cestování — smyčka fotek na posledním slidu ── */
+  const TRAVEL_PHOTOS = [
+    'media/cestovani/IMG_3780.png',
+    'media/cestovani/IMG_4057.png',
+    'media/cestovani/IMG_4162.png',
+    'media/cestovani/IMG_4068.png',
+    'media/cestovani/IMG_3517.png',
+    'media/cestovani/IMG_3843.png',
+    'media/cestovani/IMG_3871.png',
+    'media/cestovani/IMG_4217.png',
+    'media/cestovani/IMG_4046.png',
+    'media/cestovani/IMG_3436.png',
+    'media/cestovani/IMG_3446.png',
+    'media/cestovani/IMG_3605.png',
+    'media/cestovani/IMG_3836.png',
+    'media/cestovani/IMG_3983.png',
+    'media/cestovani/IMG_4011.png',
+    'media/cestovani/IMG_4066.png',
+    'media/cestovani/IMG_4376.png',
+    'media/cestovani/DSC02622.png',
+    'media/cestovani/DSC02625.png'
+  ];
+  const TRAVEL_INTERVAL = 10000;
+  const travelStage = document.getElementById('travel-stage');
+  const travelSlide = deck.querySelector('[data-travel-loop]');
+  const travelSlideIndex = travelSlide ? slides.indexOf(travelSlide) : -1;
+  let travelFrames = [], travelFrameEls = [], travelTimer = null, travelReady = false, travelIndex = 0;
+
+  function loadTravelMeta(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve({ src, portrait: img.naturalHeight > img.naturalWidth * 1.02 });
+      img.onerror = reject;
+      img.src = src;
+    });
+  }
+
+  function buildTravelFrames(metas) {
+    const frames = [];
+    for (let i = 0; i < metas.length; i++) {
+      const cur = metas[i];
+      if (!cur.portrait) {
+        frames.push({ type: 'single', images: [cur.src] });
+        continue;
+      }
+      const next = metas[i + 1];
+      if (next && next.portrait) {
+        frames.push({ type: 'pair', images: [cur.src, next.src] });
+        i++;
+      } else {
+        frames.push({ type: 'solo', images: [cur.src] });
+      }
+    }
+    return frames;
+  }
+
+  function createTravelFrameEl(frame, idx) {
+    const el = document.createElement('div');
+    el.className = 'travel-frame';
+    el.dataset.index = String(idx);
+    if (frame.type === 'single') {
+      el.classList.add('travel-frame--single');
+      el.innerHTML = '<div class="travel-photo-wrap"><img alt="" decoding="async"></div>';
+      el.querySelector('img').src = frame.images[0];
+    } else if (frame.type === 'pair') {
+      el.classList.add('travel-frame--pair');
+      el.innerHTML = frame.images.map(() => '<div class="travel-photo-wrap"><img alt="" decoding="async"></div>').join('');
+      el.querySelectorAll('img').forEach((img, i) => { img.src = frame.images[i]; });
+    } else {
+      el.classList.add('travel-frame--solo');
+      el.innerHTML =
+        '<div class="travel-photo-wrap travel-photo-wrap--bg" aria-hidden="true"></div>' +
+        '<div class="travel-photo-wrap travel-photo-wrap--fg"><img alt="" decoding="async"></div>';
+      el.querySelector('.travel-photo-wrap--bg').style.backgroundImage = 'url("' + frame.images[0] + '")';
+      el.querySelector('.travel-photo-wrap--fg img').src = frame.images[0];
+    }
+    return el;
+  }
+
+  function showTravelFrame(index) {
+    if (!travelFrameEls.length) return;
+    travelIndex = ((index % travelFrameEls.length) + travelFrameEls.length) % travelFrameEls.length;
+    travelFrameEls.forEach((el, i) => el.classList.toggle('active', i === travelIndex));
+  }
+
+  function advanceTravelFrame() {
+    showTravelFrame(travelIndex + 1);
+  }
+
+  function startTravelLoop() {
+    if (!travelReady || travelSlideIndex < 0 || current !== travelSlideIndex) return;
+    stopTravelLoop();
+    showTravelFrame(travelIndex);
+    travelTimer = setInterval(advanceTravelFrame, TRAVEL_INTERVAL);
+  }
+
+  function stopTravelLoop() {
+    clearInterval(travelTimer);
+    travelTimer = null;
+  }
+
+  function syncTravelLoop() {
+    if (travelSlideIndex < 0) return;
+    if (current === travelSlideIndex) startTravelLoop();
+    else stopTravelLoop();
+  }
+
+  if (travelStage) {
+    Promise.all(TRAVEL_PHOTOS.map(loadTravelMeta))
+      .then((metas) => {
+        travelFrames = buildTravelFrames(metas);
+        travelFrameEls = travelFrames.map((frame, idx) => {
+          const el = createTravelFrameEl(frame, idx);
+          travelStage.appendChild(el);
+          return el;
+        });
+        travelReady = true;
+        syncTravelLoop();
+      })
+      .catch(() => {});
+  }
+})();
+</script>
+</body>
+</html>
