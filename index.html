@@ -2091,6 +2091,14 @@
     .agent-h { font-family: var(--font-serif); font-size: clamp(1.12rem, 1.7vw, 1.45rem); color: var(--cream); margin-bottom: 8px; line-height: 1.1; }
     .agent-p { font-size: clamp(.84rem, 1.2vw, 1rem); line-height: 1.42; color: var(--on-dark-85); }
     .agent-p b { color: var(--gold-light); }
+
+    /* ── GEO / DIGITÁLNÍ ČITELNOST — tři bloky ── */
+    .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 2.4vh; }
+    .geo-card { padding: 18px 22px; border-radius: var(--r-md); text-align: left; }
+    .geo-tag { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: #7A5A1E; font-weight: 700; margin-bottom: 6px; }
+    .geo-h { font-family: var(--font-serif); font-size: clamp(1.12rem, 1.7vw, 1.42rem); color: #2a2622; margin-bottom: 5px; line-height: 1.1; }
+    .geo-q { font-size: clamp(.9rem, 1.3vw, 1.05rem); color: var(--muted); line-height: 1.4; }
+    @media (max-width: 860px) { .cards-3 { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -2437,21 +2445,36 @@
     </div>
   </section>
 
-  <!-- 9 · TIP 7 — NEDŮVĚŘUJ VYHLEDÁVÁNÍ -->
-  <section class="slide slide--on-blush" data-title="Tip 7 · Pozor na zdroje">
+  <!-- 9 · TIP 7 — AI ROZHODUJE, KOHO DOPORUČÍ (digitální čitelnost) -->
+  <section class="slide slide--on-blush" data-title="Tip 7 · Vidí vás AI?">
     <div class="slide-bg slide-bg--brand-light"></div>
     <div class="brand-spotlight" aria-hidden="true"></div>
     <div class="brand-atmosphere brand-atmosphere--subtle brand-atmosphere--animated" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div class="logo" aria-label="AILadies"><span class="logo-cream">AI</span><span class="logo-gold">Ladies</span></div>
     <div class="slide-inner slide-inner--center">
-      <div class="content-narrow">
-        <p class="eyebrow anim anim-1"><span class="spark">✦</span> Tip 7 · pro všechny</p>
-        <h2 class="anim anim-2">Nedůvěřujte slepě tomu, co AI <span class="text-gold">„najde"</span></h2>
-        <p class="lead anim anim-3">Výzkumníci z Cornell ukázali, že stačí vložit <strong>13 slov</strong> do běžného komentáře na webu a AI vyhledávač pak v desítkách procent případů doporučí vymyšlený produkt nebo podvod. AI věří tomu, co najde na internetu — a to se dá zneužít.</p>
-        <div class="glass anim anim-4" style="margin-top:3vh;padding:22px 28px;border-radius:14px">
-          <p style="font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.5"><span class="rose">💬</span> „AI vyhledávání je skvělý sluha, ale špatný pán. Důležité věci si ověřujte."</p>
+      <div class="content-wide" style="max-width:1120px">
+        <p class="eyebrow anim anim-1" style="justify-content:center"><span class="spark">✦</span> Tip 7 · pro všechny</p>
+        <h2 class="anim anim-2" style="text-align:center">AI teď rozhoduje, koho doporučí — <span class="text-gold">postarejte se, ať jste to vy</span></h2>
+        <p class="lead anim anim-3" style="text-align:center;max-width:940px;margin:1.4vh auto 0">Výzkum z Cornell (2026): stačí <strong>13 slov</strong> ve správné diskusi a AI vyhledávač začne doporučovat konkrétní produkt — i podvod. Obsah na webu tedy přímo řídí, co AI lidem radí. A když o vaší značce nemá co číst? Nedoporučí vás — nebo pošle lidi ke konkurenci.</p>
+        <div class="cards-3 anim anim-4">
+          <div class="geo-card glass">
+            <div class="geo-tag">1 · přístupnost</div>
+            <div class="geo-h">Vidí vás 👀</div>
+            <div class="geo-q">Přečte vás AI vůbec?</div>
+          </div>
+          <div class="geo-card glass">
+            <div class="geo-tag">2 · strukturovatelnost</div>
+            <div class="geo-h">Rozumí vám 🧩</div>
+            <div class="geo-q">Pochopí, co nabízíte?</div>
+          </div>
+          <div class="geo-card glass">
+            <div class="geo-tag">3 · citovatelnost</div>
+            <div class="geo-h">Doporučí vás ✅</div>
+            <div class="geo-q">Ocituje vás jako zdroj?</div>
+          </div>
         </div>
-        <p class="sub anim anim-4" style="margin-top:2vh;color:var(--muted)">Zdroj: Cornell Tech · Tom's Guide · 2026</p>
+        <p class="anim anim-4" style="text-align:center;margin-top:2vh;font-size:clamp(.95rem,1.4vw,1.18rem);color:rgba(26,22,18,.9)">Klasické SEO řešilo „buď vidět na Googlu". Teď jde o „<span class="text-gold">buď vidět v odpovědi AI</span>" — značky s ověřitelnými fakty a citacemi tam mají o 30–40 % vyšší viditelnost.</p>
+        <p class="sub anim anim-4" style="margin-top:1.6vh;text-align:center;color:var(--muted)">Tomu říkám <b>digitální čitelnost</b> — měřím, jak vás AI vidí, rozumí a doporučuje. · Zdroj: Cornell Tech, Tom's Guide 2026 (a ano — co AI najde, si u důležitého klidně ověřte)</p>
       </div>
     </div>
   </section>
